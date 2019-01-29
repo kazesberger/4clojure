@@ -5,13 +5,44 @@
         [foreclojure.problems :only [number-from-mongo-key solved-stats get-problem-list]]
         [foreclojure.users    :only [get-users]]))
 
+(comment
+  (defn mongo!
+    "Creates a Mongo object and sets the default database.
+
+  Does not support replica sets, and will be deprecated in future
+  releases.  Please use 'make-connection' in combination with
+  'with-mongo' or 'set-connection!' instead.
+
+     Keyword arguments include:
+     :host -> defaults to localhost
+     :port -> defaults to 27017
+     :db   -> defaults to nil (you'll have to set it anyway, might as well do it now.)"
+    {:arglists '([:db ? :host "localhost" :port 27017])}
+    [& {:keys [db host port]
+        :or {db nil host "localhost" port 27017}}]
+    (set-connection! (make-connection db :host host :port port))
+    true)
+
+  (defn authenticate
+    "Authenticate against either the current or a specified database connection.
+   Note that authenticating twice against the same database will raise an error."
+    ([conn username password]
+     (.authenticate (get-db conn)
+                    ^String username
+                    (.toCharArray ^String password)))
+    ([username password]
+     (authenticate *mongo-config* username password))))
+
+
 (defn connect-to-db []
-  (let [{:keys [db-user db-pwd db-host db-name]} config]
-    (mongo!
-     :host (or db-host "localhost")
-     :db   (or db-name "mydb"))
-    (when (and db-user db-pwd)
-      (authenticate db-user db-pwd))))
+  (let [{:keys [db-user db-pwd db-name db-host db-port]
+         :or {db-name "mydb" db-host "localhost" db-port 27017}} config]
+    (set-connection!
+      (make-connection db-name
+                       :instances [{:hosts db-host
+                                    :port db-port}]
+                       :username db-user
+                       :password db-pwd))))
 
 (defn prepare-problems []
   (when-not (fetch-one :problems)
