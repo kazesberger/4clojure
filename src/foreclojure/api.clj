@@ -4,7 +4,7 @@
             [foreclojure.utils :only [as-int]]
             [compojure.core :only [routes GET]]
             [somnium.congomongo       :only    [fetch-one]]
-            [useful.map :only [update-each]]))
+            [flatland.useful.map :only [update-each]]))
 
 (def api-routes
   (-> (routes

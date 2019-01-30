@@ -1,4 +1,4 @@
-{:wrap-reload false
+{:wrap-reload true
  :db-host "localhost"
  :db-name "4clojure"
  :db-user nil

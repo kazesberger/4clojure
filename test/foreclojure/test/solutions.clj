@@ -1,7 +1,7 @@
 (ns foreclojure.test.solutions
   (:require [clojure.string       :as   s])
   (:use     [somnium.congomongo   :only [fetch-one update!]])
-  (:use     [useful.debug         :only [?]])            
+  (:use     [flatland.useful.debug         :only [?]])
   (:use     [foreclojure.messages :only [err-msg]])
   (:use     [foreclojure.solutions])
   (:use     [clojure.test])

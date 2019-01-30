@@ -7,7 +7,7 @@
             [foreclojure.template     :only [def-page content-page]]
             [foreclojure.messages     :only [err-msg]]
             [compojure.core           :only [defroutes GET POST]]
-            [useful.map               :only [keyed]]
+            [flatland.useful.map               :only [keyed]]
             [clojail.core             :only [thunk-timeout]]
             [clojure.stacktrace       :only [print-cause-trace]]
             [somnium.congomongo       :only [update! fetch-one]]))

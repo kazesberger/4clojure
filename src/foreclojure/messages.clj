@@ -3,8 +3,8 @@
 (defn load-props [file] 
   (into {} (doto (java.util.Properties.)
              (.load (-> (Thread/currentThread)
-             (.getContextClassLoader)
-             (.getResourceAsStream file))))))
+                        (.getContextClassLoader)
+                        (.getResourceAsStream file))))))
  
 (def err-msg-map  (load-props "error-messages.properties"))             
              

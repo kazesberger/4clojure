@@ -19,7 +19,7 @@
             [hiccup.form              :only    [form-to text-area hidden-field label text-field drop-down]]
             [hiccup.element           :only    [link-to]]
             [hiccup.core              :only    [html]]
-            [useful.debug             :only    [?]]
+            [flatland.useful.debug             :only    [?]]
             [compojure.core           :only    [defroutes GET POST]]))
 
 (def solved-stats (agent {:total 0}))
@@ -31,7 +31,7 @@
 (defn get-problem-list
   ([] (get-problem-list {:approved true}))
   ([criteria]
-     (from-mongo
+   (from-mongo
       (fetch :problems
              :only [:_id :title :difficulty :tags :user]
              :where criteria
@@ -55,9 +55,9 @@
   (defn suggest-problems
     ([] "You've solved them all! Come back later for more!")
     ([problem]
-       (str "Now try " (problem-link problem) "!"))
+     (str "Now try " (problem-link problem) "!"))
     ([skipped not-tried]
-      (str "Now you can move on to " (problem-link not-tried)
+     (str "Now you can move on to " (problem-link not-tried)
            ", or go back and try " (problem-link skipped) " again!"))))
 
 (defn next-problem-link [completed-problem-id]
@@ -159,8 +159,8 @@
   (let [user (or user (session/get :user))
         {:keys [_id approved]} problem
         paste-link (html [:span.share
-                         [:a.novisited {:href "/share/code"} "share"]
-                         " this solution on github and twitter!  "])
+                          [:a.novisited {:href "/share/code"} "share"]
+                          " this solution on github and twitter!  "])
         message
         (cond
          (not approved) (str "You've solved the unapproved problem. Now you can approve it!")

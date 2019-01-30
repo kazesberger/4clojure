@@ -1,6 +1,6 @@
 (ns foreclojure.config
   (:require [clojure.java.io :refer [file]]
-            [useful.config :refer [load-config]]))
+            [flatland.useful.config :refer [load-config]]))
 
 (def config (load-config "config.clj"))
 

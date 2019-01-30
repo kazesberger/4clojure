@@ -6,7 +6,7 @@
                                      ByteArrayOutputStream])
   (:use     [compojure.core          :only [defroutes GET]]
             [foreclojure.problems    :only [solved-stats]]
-            [useful.utils            :only [with-adjustments]]))
+            [flatland.useful.utils            :only [with-adjustments]]))
 
 (defn un-group
   "Turn a compact set of [data-point num-repetitions] pairs into a

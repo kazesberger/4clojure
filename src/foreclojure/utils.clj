@@ -14,7 +14,7 @@
             [hiccup.page              :only [doctype]]
             [hiccup.element           :only [link-to]]
             [hiccup.form              :only [label]]
-            [useful.fn                :only [to-fix]]
+            [flatland.useful.fn                :only [to-fix]]
             [somnium.congomongo       :only [fetch-one]]
             [foreclojure.ring-utils   :only [*url* static-url]]
             [foreclojure.config       :only [config repo-url]]))
@@ -76,27 +76,27 @@
   "Acts like clojure.core/update-in, except that if the value being assoc'd in
   is nil, then instead the key is dissoc'd entirely."
   ([m ks f]
-     (let [[k & ks] ks
-           inner (get m k)
-           v (if ks
-               (maybe-update inner ks f)
-               (f inner))]
+   (let [[k & ks] ks
+         inner (get m k)
+         v (if ks
+             (maybe-update inner ks f)
+             (f inner))]
        (if v
          (assoc m k v)
          (dissoc m k))))
   ([m ks f & args]
-     (maybe-update m ks #(apply f % args))))
+   (maybe-update m ks #(apply f % args))))
 
 (defn login-url
   ([] (login-url *url*))
   ([location]
-     (str "/login?location=" (URLEncoder/encode location))))
+   (str "/login?location=" (URLEncoder/encode location))))
 
 (defn login-link
   ([] (login-link "Log in" *url*))
   ([text] (login-link text *url*))
   ([text location]
-     (html
+   (html
       (link-to (login-url location)
                text))))
 

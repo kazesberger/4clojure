@@ -90,14 +90,14 @@
 (defn format-user-ranking [{:keys [rank user contributor solved]}]
   (when user
     [:div
-    [:h2 "Your Ranking"]
-    [:div.ranking (str "Username: ")
-     (when contributor [:span.contributor "* "])
-     [:a.user-profile-link make-user-url user]]
-    [:div.ranking (str "Rank: " rank)]
-    [:div.ranking (str "Problems Solved: " (count solved))]
-    [:br]
-    [:br]]))
+     [:h2 "Your Ranking"]
+     [:div.ranking (str "Username: ")
+      (when contributor [:span.contributor "* "])
+      [:a.user-profile-link make-user-url user]]
+     [:div.ranking (str "Rank: " rank)]
+     [:div.ranking (str "Problems Solved: " (count solved))]
+     [:br]
+     [:br]]))
 
 (defn follow-url [username follow?]
   (str "/user/" (if follow? "follow" "unfollow") "/" username))
@@ -170,24 +170,24 @@
 ;; TODO: this is snagged from problems.clj but can't be imported due to cyclic dependency, must refactor this out.
 (defn get-problems
   ([]
-     (from-mongo
-      (fetch :problems
-             :only  [:_id :difficulty]
-             :where {:approved true}
-             :sort  {:_id 1})))
+   (from-mongo
+    (fetch :problems
+           :only  [:_id :difficulty]
+           :where {:approved true}
+           :sort  {:_id 1})))
   ([difficulty]
-     (get (group-by :difficulty (get-problems)) difficulty [{}])))
+   (get (group-by :difficulty (get-problems)) difficulty [{}])))
 
 (defn get-solved
   ([username]
-     (:solved (get-user username)))
+   (:solved (get-user username)))
   ([username difficulty]
-     (let [ids (->> (from-mongo
+   (let [ids (->> (from-mongo
                      (fetch :problems
                             :only  [:_id]
                             :where {:approved true, :difficulty difficulty}))
-                    (map :_id)
-                    (set))]
+                  (map :_id)
+                  (set))]
        (filter ids (get-solved username)))))
 
 (def-page user-profile [username]
@@ -223,7 +223,7 @@
                             (int (* 100 (/ solved total)))
                             "%")}]]]]))
        [:tr
-        [:td.count-total "TOTAL:"    ]
+        [:td.count-total "TOTAL:"]
         [:td.count-value
          (count (get-solved username)) "/"
          (count (get-problems))]]])}))

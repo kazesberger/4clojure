@@ -8,7 +8,7 @@
             [hiccup.core               :only [html]]
             [foreclojure.version-utils :only [strip-version-number]]
             [foreclojure.ring-utils    :only [get-host static-url]]
-            [useful.debug              :only [?]]
+            [flatland.useful.debug              :only [?]]
             [ring.util.response        :only [response]]))
 
 ;; copied from compojure.route, modified to use File instead of Stream
