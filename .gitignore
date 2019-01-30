@@ -12,3 +12,6 @@ pom.xml
 .emacs-project
 .lein-failures
 target
+/resources/js/compiled
+.lein-repl-history
+figwheel_server.log
