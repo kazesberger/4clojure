@@ -77,8 +77,8 @@ return mranderson048.re_frame.v0v10v2.re_frame.registrar.register_handler.call(n
  * to the event handler at call time.
  */
 mranderson048.re_frame.v0v10v2.re_frame.cofx.inject_cofx = (function mranderson048$re_frame$v0v10v2$re_frame$cofx$inject_cofx(var_args){
-var G__63387 = arguments.length;
-switch (G__63387) {
+var G__75454 = arguments.length;
+switch (G__75454) {
 case 1:
 return mranderson048.re_frame.v0v10v2.re_frame.cofx.inject_cofx.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
 
@@ -124,4 +124,4 @@ return cljs.core.assoc.call(null,coeffects,new cljs.core.Keyword(null,"db","db",
 }));
 mranderson048.re_frame.v0v10v2.re_frame.cofx.inject_db = mranderson048.re_frame.v0v10v2.re_frame.cofx.inject_cofx.call(null,new cljs.core.Keyword(null,"db","db",993250759));
 
-//# sourceMappingURL=cofx.js.map?rel=1548888395310
+//# sourceMappingURL=cofx.js.map?rel=1549004134382

@@ -64,19 +64,19 @@ cljs.core.PersistentHashSet.prototype.rewrite_clj$node$protocols$NodeCoerceable$
 var sq__$1 = this;
 return rewrite_clj.node.coercer.seq_node.call(null,rewrite_clj.node.seq.set_node,sq__$1);
 });
-var comma_62818 = rewrite_clj.node.whitespace.whitespace_node.call(null,", ");
-var space_62819 = rewrite_clj.node.whitespace.whitespace_node.call(null," ");
-rewrite_clj.node.coercer.map__GT_children = ((function (comma_62818,space_62819){
+var comma_74414 = rewrite_clj.node.whitespace.whitespace_node.call(null,", ");
+var space_74415 = rewrite_clj.node.whitespace.whitespace_node.call(null," ");
+rewrite_clj.node.coercer.map__GT_children = ((function (comma_74414,space_74415){
 return (function rewrite_clj$node$coercer$map__GT_children(m){
-return cljs.core.vec.call(null,cljs.core.butlast.call(null,cljs.core.mapcat.call(null,((function (comma_62818,space_62819){
-return (function (p__62814){
-var vec__62815 = p__62814;
-var k = cljs.core.nth.call(null,vec__62815,(0),null);
-var v = cljs.core.nth.call(null,vec__62815,(1),null);
-return new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [rewrite_clj.node.protocols.coerce.call(null,k),space_62819,rewrite_clj.node.protocols.coerce.call(null,v),comma_62818], null);
-});})(comma_62818,space_62819))
+return cljs.core.vec.call(null,cljs.core.butlast.call(null,cljs.core.mapcat.call(null,((function (comma_74414,space_74415){
+return (function (p__74410){
+var vec__74411 = p__74410;
+var k = cljs.core.nth.call(null,vec__74411,(0),null);
+var v = cljs.core.nth.call(null,vec__74411,(1),null);
+return new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [rewrite_clj.node.protocols.coerce.call(null,k),space_74415,rewrite_clj.node.protocols.coerce.call(null,v),comma_74414], null);
+});})(comma_74414,space_74415))
 ,m)));
-});})(comma_62818,space_62819))
+});})(comma_74414,space_74415))
 ;
 cljs.core.PersistentHashMap.prototype.rewrite_clj$node$protocols$NodeCoerceable$ = cljs.core.PROTOCOL_SENTINEL;
 
@@ -182,4 +182,4 @@ var v__$1 = this;
 return v__$1;
 });
 
-//# sourceMappingURL=coercer.js.map?rel=1548888394017
+//# sourceMappingURL=coercer.js.map?rel=1549004131113

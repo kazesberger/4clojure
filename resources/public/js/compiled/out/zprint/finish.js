@@ -4,9 +4,9 @@ goog.require('cljs.core');
 goog.require('clojure.string');
 goog.require('zprint.ansi');
 goog.require('zprint.focus');
-zprint.finish.no_style_map = new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"f","f",-1597136552),(function (p1__64390_SHARP_){
-if(cljs.core.not_EQ_.call(null,p1__64390_SHARP_,new cljs.core.Keyword(null,"none","none",1333468478))){
-return cljs.core.conj.call(null,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"reverse","reverse",-888455266)], null),p1__64390_SHARP_);
+zprint.finish.no_style_map = new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"f","f",-1597136552),(function (p1__78860_SHARP_){
+if(cljs.core.not_EQ_.call(null,p1__78860_SHARP_,new cljs.core.Keyword(null,"none","none",1333468478))){
+return cljs.core.conj.call(null,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"reverse","reverse",-888455266)], null),p1__78860_SHARP_);
 } else {
 return new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"reverse","reverse",-888455266)], null);
 }
@@ -14,10 +14,10 @@ return new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMP
 /**
  * Is n within the closed range of low to high?
  */
-zprint.finish.within_QMARK_ = (function zprint$finish$within_QMARK_(n,p__64391){
-var vec__64392 = p__64391;
-var low = cljs.core.nth.call(null,vec__64392,(0),null);
-var high = cljs.core.nth.call(null,vec__64392,(1),null);
+zprint.finish.within_QMARK_ = (function zprint$finish$within_QMARK_(n,p__78861){
+var vec__78862 = p__78861;
+var low = cljs.core.nth.call(null,vec__78862,(0),null);
+var high = cljs.core.nth.call(null,vec__78862,(1),null);
 return (((n >= low)) && ((n <= high)));
 });
 /**
@@ -37,12 +37,12 @@ return cljs.core.some.call(null,cljs.core.partial.call(null,zprint.finish.within
  *   is the same as the key for the ground you get from the
  *   focus.  If you don't have a focus, you get the background.
  */
-zprint.finish.ground_color_to_style = (function zprint$finish$ground_color_to_style(p__64395,s,color,element,idx){
-var map__64396 = p__64395;
-var map__64396__$1 = ((((!((map__64396 == null)))?(((((map__64396.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__64396.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__64396):map__64396);
-var style_map = cljs.core.get.call(null,map__64396__$1,new cljs.core.Keyword(null,"style-map","style-map",1488693527));
-var focus = cljs.core.get.call(null,map__64396__$1,new cljs.core.Keyword(null,"focus","focus",234677911));
-var select = cljs.core.get.call(null,map__64396__$1,new cljs.core.Keyword(null,"select","select",1147833503));
+zprint.finish.ground_color_to_style = (function zprint$finish$ground_color_to_style(p__78865,s,color,element,idx){
+var map__78866 = p__78865;
+var map__78866__$1 = ((((!((map__78866 == null)))?(((((map__78866.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__78866.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__78866):map__78866);
+var style_map = cljs.core.get.call(null,map__78866__$1,new cljs.core.Keyword(null,"style-map","style-map",1488693527));
+var focus = cljs.core.get.call(null,map__78866__$1,new cljs.core.Keyword(null,"focus","focus",234677911));
+var select = cljs.core.get.call(null,map__78866__$1,new cljs.core.Keyword(null,"select","select",1147833503));
 var output_QMARK_ = (cljs.core.truth_(select)?zprint.finish.within_vec_QMARK_.call(null,idx,select):true);
 if(cljs.core.truth_(output_QMARK_)){
 return style_map.call(null,((cljs.core._EQ_.call(null,element,new cljs.core.Keyword(null,"cursor-element","cursor-element",-616791907)))?(function (){
@@ -76,11 +76,11 @@ return null;
  * Given [string :style <start>] turn it into
  *   [string :style <start> <length>]
  */
-zprint.finish.add_length = (function zprint$finish$add_length(p__64398){
-var vec__64399 = p__64398;
-var s = cljs.core.nth.call(null,vec__64399,(0),null);
-var style = cljs.core.nth.call(null,vec__64399,(1),null);
-var start = cljs.core.nth.call(null,vec__64399,(2),null);
+zprint.finish.add_length = (function zprint$finish$add_length(p__78868){
+var vec__78869 = p__78868;
+var s = cljs.core.nth.call(null,vec__78869,(0),null);
+var style = cljs.core.nth.call(null,vec__78869,(1),null);
+var start = cljs.core.nth.call(null,vec__78869,(2),null);
 return new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [s,style,start,cljs.core.count.call(null,s)], null);
 });
 /**
@@ -92,11 +92,11 @@ return new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMP
  *   :focus is a two element vector of start and end elements
  *   which are in focus.
  */
-zprint.finish.gc_vec_to_style_vec = (function zprint$finish$gc_vec_to_style_vec(ctx,idx,p__64402){
-var vec__64403 = p__64402;
-var s = cljs.core.nth.call(null,vec__64403,(0),null);
-var keyword_color = cljs.core.nth.call(null,vec__64403,(1),null);
-var element = cljs.core.nth.call(null,vec__64403,(2),null);
+zprint.finish.gc_vec_to_style_vec = (function zprint$finish$gc_vec_to_style_vec(ctx,idx,p__78872){
+var vec__78873 = p__78872;
+var s = cljs.core.nth.call(null,vec__78873,(0),null);
+var keyword_color = cljs.core.nth.call(null,vec__78873,(1),null);
+var element = cljs.core.nth.call(null,vec__78873,(2),null);
 var style = zprint.finish.ground_color_to_style.call(null,ctx,s,keyword_color,element,idx);
 if(cljs.core.truth_(style)){
 return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [s,((cljs.core.not_EQ_.call(null,style,new cljs.core.Keyword(null,"none","none",1333468478)))?style:null),element], null);
@@ -152,15 +152,15 @@ return out;
 } else {
 var this_ssv = cljs.core.first.call(null,ssv);
 var this_elide = ((((doing_nil_QMARK_) && (!((this_ssv == null)))))?zprint.finish.elide_indent.call(null,this_ssv):null);
-var G__64406 = cljs.core.next.call(null,ssv);
-var G__64407 = (this_ssv == null);
-var G__64408 = (cljs.core.truth_(this_elide)?this_elide:last_elide);
-var G__64409 = ((((doing_nil_QMARK_) && ((this_ssv == null))))?out:((((doing_nil_QMARK_) && (!((this_ssv == null)))))?cljs.core.conj.call(null,cljs.core.conj.call(null,cljs.core.conj.call(null,out,zprint.finish.gc_vec_to_style_vec.call(null,ctx,(0),this_elide)),zprint.finish.gc_vec_to_style_vec.call(null,ctx,(0),elide__$1)),this_ssv):(((this_ssv == null))?out:cljs.core.conj.call(null,out,this_ssv)
+var G__78876 = cljs.core.next.call(null,ssv);
+var G__78877 = (this_ssv == null);
+var G__78878 = (cljs.core.truth_(this_elide)?this_elide:last_elide);
+var G__78879 = ((((doing_nil_QMARK_) && ((this_ssv == null))))?out:((((doing_nil_QMARK_) && (!((this_ssv == null)))))?cljs.core.conj.call(null,cljs.core.conj.call(null,cljs.core.conj.call(null,out,zprint.finish.gc_vec_to_style_vec.call(null,ctx,(0),this_elide)),zprint.finish.gc_vec_to_style_vec.call(null,ctx,(0),elide__$1)),this_ssv):(((this_ssv == null))?out:cljs.core.conj.call(null,out,this_ssv)
 )));
-ssv = G__64406;
-doing_nil_QMARK_ = G__64407;
-last_elide = G__64408;
-out = G__64409;
+ssv = G__78876;
+doing_nil_QMARK_ = G__78877;
+last_elide = G__78878;
+out = G__78879;
 continue;
 }
 break;
@@ -180,17 +180,17 @@ while(true){
 if(cljs.core.not.call(null,remaining_cvec)){
 return out;
 } else {
-var vec__64410 = cljs.core.first.call(null,remaining_cvec);
-var _ = cljs.core.nth.call(null,vec__64410,(0),null);
-var ___$1 = cljs.core.nth.call(null,vec__64410,(1),null);
-var element_type = cljs.core.nth.call(null,vec__64410,(2),null);
+var vec__78880 = cljs.core.first.call(null,remaining_cvec);
+var _ = cljs.core.nth.call(null,vec__78880,(0),null);
+var ___$1 = cljs.core.nth.call(null,vec__78880,(1),null);
+var element_type = cljs.core.nth.call(null,vec__78880,(2),null);
 var new_idx = ((cljs.core._EQ_.call(null,cljs.core.nth.call(null,cljs.core.first.call(null,remaining_cvec),(2)),new cljs.core.Keyword(null,"comment-wrap","comment-wrap",720664128)))?idx:(idx + (1)));
-var G__64413 = cljs.core.next.call(null,remaining_cvec);
-var G__64414 = new_idx;
-var G__64415 = cljs.core.conj.call(null,out,new_idx);
-remaining_cvec = G__64413;
-idx = G__64414;
-out = G__64415;
+var G__78883 = cljs.core.next.call(null,remaining_cvec);
+var G__78884 = new_idx;
+var G__78885 = cljs.core.conj.call(null,out,new_idx);
+remaining_cvec = G__78883;
+idx = G__78884;
+out = G__78885;
 continue;
 }
 break;
@@ -213,8 +213,8 @@ break;
  *   doesn't have any relation to the :style-map in the options map.
  */
 zprint.finish.cvec_to_style_vec = (function zprint$finish$cvec_to_style_vec(var_args){
-var G__64417 = arguments.length;
-switch (G__64417) {
+var G__78887 = arguments.length;
+switch (G__78887) {
 case 4:
 return zprint.finish.cvec_to_style_vec.cljs$core$IFn$_invoke$arity$4((arguments[(0)]),(arguments[(1)]),(arguments[(2)]),(arguments[(3)]));
 
@@ -260,8 +260,8 @@ zprint.finish.cvec_to_style_vec.cljs$lang$maxFixedArity = 4;
  *   from it.  This will compress strings which have the same style.
  */
 zprint.finish.compress_style = (function zprint$finish$compress_style(var_args){
-var G__64420 = arguments.length;
-switch (G__64420) {
+var G__78890 = arguments.length;
+switch (G__78890) {
 case 2:
 return zprint.finish.compress_style.cljs$core$IFn$_invoke$arity$2((arguments[(0)]),(arguments[(1)]));
 
@@ -287,14 +287,14 @@ if(cljs.core.not.call(null,ss)){
 return cljs.core.conj.call(null,out,zprint.finish.add_length.call(null,current));
 } else {
 var same_style_QMARK_ = cljs.core._EQ_.call(null,cljs.core.second.call(null,current),cljs.core.second.call(null,ss));
-var G__64422 = cljs.core.next.call(null,ss_vec);
-var G__64423 = ((same_style_QMARK_)?new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [[cljs.core.str.cljs$core$IFn$_invoke$arity$1(cljs.core.first.call(null,current)),cljs.core.str.cljs$core$IFn$_invoke$arity$1(cljs.core.first.call(null,ss))].join(''),cljs.core.second.call(null,current),cljs.core.nth.call(null,current,(2))], null):new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.first.call(null,ss),cljs.core.second.call(null,ss),pos], null));
-var G__64424 = (pos + cljs.core.count.call(null,cljs.core.first.call(null,ss)));
-var G__64425 = ((((same_style_QMARK_) || (cljs.core._EQ_.call(null,initial_pos,pos))))?out:cljs.core.conj.call(null,out,zprint.finish.add_length.call(null,current)));
-ss_vec = G__64422;
-current = G__64423;
-pos = G__64424;
-out = G__64425;
+var G__78892 = cljs.core.next.call(null,ss_vec);
+var G__78893 = ((same_style_QMARK_)?new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [[cljs.core.str.cljs$core$IFn$_invoke$arity$1(cljs.core.first.call(null,current)),cljs.core.str.cljs$core$IFn$_invoke$arity$1(cljs.core.first.call(null,ss))].join(''),cljs.core.second.call(null,current),cljs.core.nth.call(null,current,(2))], null):new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.first.call(null,ss),cljs.core.second.call(null,ss),pos], null));
+var G__78894 = (pos + cljs.core.count.call(null,cljs.core.first.call(null,ss)));
+var G__78895 = ((((same_style_QMARK_) || (cljs.core._EQ_.call(null,initial_pos,pos))))?out:cljs.core.conj.call(null,out,zprint.finish.add_length.call(null,current)));
+ss_vec = G__78892;
+current = G__78893;
+pos = G__78894;
+out = G__78895;
 continue;
 }
 break;
@@ -315,27 +315,27 @@ zprint.finish.compress_style.cljs$lang$maxFixedArity = 2;
  *   vec and return a new focus-vec and gcw-vec as [focus-vec gcw-vec], 
  *   else just return with no changes
  */
-zprint.finish.replace_focus_w_cursor = (function zprint$finish$replace_focus_w_cursor(gcw_vec,p__64426,cursor_vec){
-var vec__64427 = p__64426;
-var focus_start = cljs.core.nth.call(null,vec__64427,(0),null);
-var focus_end = cljs.core.nth.call(null,vec__64427,(1),null);
-var focus_vec = vec__64427;
+zprint.finish.replace_focus_w_cursor = (function zprint$finish$replace_focus_w_cursor(gcw_vec,p__78896,cursor_vec){
+var vec__78897 = p__78896;
+var focus_start = cljs.core.nth.call(null,vec__78897,(0),null);
+var focus_end = cljs.core.nth.call(null,vec__78897,(1),null);
+var focus_vec = vec__78897;
 if(cljs.core.empty_QMARK_.call(null,cursor_vec)){
 return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [focus_vec,gcw_vec], null);
 } else {
-var vec__64430 = cljs.core.split_at.call(null,focus_start,gcw_vec);
-var front = cljs.core.nth.call(null,vec__64430,(0),null);
-var back = cljs.core.nth.call(null,vec__64430,(1),null);
+var vec__78900 = cljs.core.split_at.call(null,focus_start,gcw_vec);
+var front = cljs.core.nth.call(null,vec__78900,(0),null);
+var back = cljs.core.nth.call(null,vec__78900,(1),null);
 return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [focus_start,(focus_start + (cljs.core.count.call(null,cursor_vec) - (1)))], null),cljs.core.concat.call(null,front,cursor_vec,cljs.core.drop.call(null,((focus_end - focus_start) + (1)),back))], null);
 }
 });
 /**
  * Turn a [string :color] into an ansi colored string.
  */
-zprint.finish.color_style = (function zprint$finish$color_style(p__64433){
-var vec__64434 = p__64433;
-var s = cljs.core.nth.call(null,vec__64434,(0),null);
-var color = cljs.core.nth.call(null,vec__64434,(1),null);
+zprint.finish.color_style = (function zprint$finish$color_style(p__78903){
+var vec__78904 = p__78903;
+var s = cljs.core.nth.call(null,vec__78904,(0),null);
+var color = cljs.core.nth.call(null,vec__78904,(1),null);
 if((color == null)){
 return s;
 } else {
@@ -373,8 +373,8 @@ zprint.finish.fzprint_cursor = new cljs.core.PersistentVector(null, 2, 5, cljs.c
  *   [[string <start> <length>] ...]
  */
 zprint.finish.cursor_style = (function zprint$finish$cursor_style(var_args){
-var G__64439 = arguments.length;
-switch (G__64439) {
+var G__78909 = arguments.length;
+switch (G__78909) {
 case 2:
 return zprint.finish.cursor_style.cljs$core$IFn$_invoke$arity$2((arguments[(0)]),(arguments[(1)]));
 
@@ -389,10 +389,10 @@ throw (new Error(["Invalid arity: ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(
 }
 });
 
-zprint.finish.cursor_style.cljs$core$IFn$_invoke$arity$2 = (function (p__64440,existing_count){
-var vec__64441 = p__64440;
-var s = cljs.core.nth.call(null,vec__64441,(0),null);
-var cursor = cljs.core.nth.call(null,vec__64441,(1),null);
+zprint.finish.cursor_style.cljs$core$IFn$_invoke$arity$2 = (function (p__78910,existing_count){
+var vec__78911 = p__78910;
+var s = cljs.core.nth.call(null,vec__78911,(0),null);
+var cursor = cljs.core.nth.call(null,vec__78911,(1),null);
 cljs.core.prn.call(null,"cursor-style: s:",s,",cursor:",cursor);
 
 if(cljs.core.truth_(cursor)){
@@ -402,10 +402,10 @@ var cursor__$1 = (function (){var x__4009__auto__ = zprint.finish.floor.call(nul
 var y__4010__auto__ = cursor;
 return ((x__4009__auto__ < y__4010__auto__) ? x__4009__auto__ : y__4010__auto__);
 })();
-return cljs.core.filterv.call(null,((function (s__$1,len,cursor__$1,vec__64441,s,cursor){
-return (function (p1__64437_SHARP_){
-return !(cljs.core.empty_QMARK_.call(null,cljs.core.first.call(null,p1__64437_SHARP_)));
-});})(s__$1,len,cursor__$1,vec__64441,s,cursor))
+return cljs.core.filterv.call(null,((function (s__$1,len,cursor__$1,vec__78911,s,cursor){
+return (function (p1__78907_SHARP_){
+return !(cljs.core.empty_QMARK_.call(null,cljs.core.first.call(null,p1__78907_SHARP_)));
+});})(s__$1,len,cursor__$1,vec__78911,s,cursor))
 ,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.subs.call(null,s__$1,(0),cursor__$1),new cljs.core.Keyword(null,"none","none",1333468478),new cljs.core.Keyword(null,"element","element",1974019749)], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [[cljs.core.str.cljs$core$IFn$_invoke$arity$1(cljs.core.get.call(null,s__$1,cursor__$1))].join(''),new cljs.core.Keyword(null,"none","none",1333468478),new cljs.core.Keyword(null,"cursor-element","cursor-element",-616791907)], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.subs.call(null,s__$1,(cursor__$1 + (1)),len),new cljs.core.Keyword(null,"none","none",1333468478),new cljs.core.Keyword(null,"element","element",1974019749)], null)], null));
 } else {
 return new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [s,new cljs.core.Keyword(null,"none","none",1333468478),new cljs.core.Keyword(null,"element","element",1974019749)], null)], null);
@@ -448,19 +448,19 @@ while(true){
 if(cljs.core.empty_QMARK_.call(null,cvec_nl)){
 return cljs.core.conj.call(null,out,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [start,(idx - (1))], null));
 } else {
-var vec__64445 = cljs.core.first.call(null,cvec_nl);
-var n = cljs.core.nth.call(null,vec__64445,(0),null);
-var where = cljs.core.nth.call(null,vec__64445,(1),null);
-var cvec_element = vec__64445;
+var vec__78915 = cljs.core.first.call(null,cvec_nl);
+var n = cljs.core.nth.call(null,vec__78915,(0),null);
+var where = cljs.core.nth.call(null,vec__78915,(1),null);
+var cvec_element = vec__78915;
 if((cvec_element == null)){
-var G__64448 = cljs.core.next.call(null,cvec_nl);
-var G__64449 = (idx + (1));
-var G__64450 = start;
-var G__64451 = out;
-cvec_nl = G__64448;
-idx = G__64449;
-start = G__64450;
-out = G__64451;
+var G__78918 = cljs.core.next.call(null,cvec_nl);
+var G__78919 = (idx + (1));
+var G__78920 = start;
+var G__78921 = out;
+cvec_nl = G__78918;
+idx = G__78919;
+start = G__78920;
+out = G__78921;
 continue;
 } else {
 if(cljs.core.truth_((function (){var and__3911__auto__ = cljs.core._EQ_.call(null,n,(1));
@@ -470,14 +470,14 @@ return new cljs.core.Keyword(null,"b","b",1482224470).cljs$core$IFn$_invoke$arit
 return and__3911__auto__;
 }
 })())){
-var G__64452 = cljs.core.next.call(null,cvec_nl);
-var G__64453 = (idx + (1));
-var G__64454 = idx;
-var G__64455 = cljs.core.conj.call(null,out,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [start,(idx - (1))], null));
-cvec_nl = G__64452;
-idx = G__64453;
-start = G__64454;
-out = G__64455;
+var G__78922 = cljs.core.next.call(null,cvec_nl);
+var G__78923 = (idx + (1));
+var G__78924 = idx;
+var G__78925 = cljs.core.conj.call(null,out,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [start,(idx - (1))], null));
+cvec_nl = G__78922;
+idx = G__78923;
+start = G__78924;
+out = G__78925;
 continue;
 } else {
 if(cljs.core.truth_((function (){var and__3911__auto__ = cljs.core._EQ_.call(null,n,(1));
@@ -487,14 +487,14 @@ return new cljs.core.Keyword(null,"e","e",1381269198).cljs$core$IFn$_invoke$arit
 return and__3911__auto__;
 }
 })())){
-var G__64456 = cljs.core.next.call(null,cvec_nl);
-var G__64457 = (idx + (1));
-var G__64458 = (idx + (1));
-var G__64459 = cljs.core.conj.call(null,out,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [start,idx], null));
-cvec_nl = G__64456;
-idx = G__64457;
-start = G__64458;
-out = G__64459;
+var G__78926 = cljs.core.next.call(null,cvec_nl);
+var G__78927 = (idx + (1));
+var G__78928 = (idx + (1));
+var G__78929 = cljs.core.conj.call(null,out,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [start,idx], null));
+cvec_nl = G__78926;
+idx = G__78927;
+start = G__78928;
+out = G__78929;
 continue;
 } else {
 if(cljs.core.truth_((function (){var and__3911__auto__ = (n > (1));
@@ -509,25 +509,25 @@ return and__3911__auto____$1;
 return and__3911__auto__;
 }
 })())){
-var G__64460 = cljs.core.next.call(null,cvec_nl);
-var G__64461 = (idx + (1));
-var G__64462 = idx;
-var G__64463 = cljs.core.apply.call(null,cljs.core.conj,cljs.core.conj.call(null,out,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [start,(idx - (1))], null)),cljs.core.repeat.call(null,n,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [idx,idx], null)));
-cvec_nl = G__64460;
-idx = G__64461;
-start = G__64462;
-out = G__64463;
+var G__78930 = cljs.core.next.call(null,cvec_nl);
+var G__78931 = (idx + (1));
+var G__78932 = idx;
+var G__78933 = cljs.core.apply.call(null,cljs.core.conj,cljs.core.conj.call(null,out,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [start,(idx - (1))], null)),cljs.core.repeat.call(null,n,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [idx,idx], null)));
+cvec_nl = G__78930;
+idx = G__78931;
+start = G__78932;
+out = G__78933;
 continue;
 } else {
 if(cljs.core.truth_(new cljs.core.Keyword(null,"m","m",1632677161).cljs$core$IFn$_invoke$arity$1(where))){
-var G__64464 = cljs.core.next.call(null,cvec_nl);
-var G__64465 = (idx + (1));
-var G__64466 = start;
-var G__64467 = cljs.core.apply.call(null,cljs.core.conj,out,cljs.core.repeat.call(null,n,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [start,idx], null)));
-cvec_nl = G__64464;
-idx = G__64465;
-start = G__64466;
-out = G__64467;
+var G__78934 = cljs.core.next.call(null,cvec_nl);
+var G__78935 = (idx + (1));
+var G__78936 = start;
+var G__78937 = cljs.core.apply.call(null,cljs.core.conj,out,cljs.core.repeat.call(null,n,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [start,idx], null)));
+cvec_nl = G__78934;
+idx = G__78935;
+start = G__78936;
+out = G__78937;
 continue;
 } else {
 return null;
@@ -544,11 +544,11 @@ break;
  * Given a cvec index, return the line that it is in.
  */
 zprint.finish.find_line = (function zprint$finish$find_line(lines,idx){
-return cljs.core.reduce.call(null,(function (p1__64469_SHARP_,p2__64468_SHARP_){
-if(cljs.core.truth_(zprint.finish.within_QMARK_.call(null,idx,p2__64468_SHARP_))){
-return cljs.core.reduced.call(null,p1__64469_SHARP_);
+return cljs.core.reduce.call(null,(function (p1__78939_SHARP_,p2__78938_SHARP_){
+if(cljs.core.truth_(zprint.finish.within_QMARK_.call(null,idx,p2__78938_SHARP_))){
+return cljs.core.reduced.call(null,p1__78939_SHARP_);
 } else {
-return (p1__64469_SHARP_ + (1));
+return (p1__78939_SHARP_ + (1));
 }
 }),(0),lines);
 });
@@ -557,13 +557,13 @@ return (p1__64469_SHARP_ + (1));
  *   the focus, output a vector of vectors of cvec indicies that cover the 
  *   desired lines. [[start end] [start end] ...]
  */
-zprint.finish.surround_focus = (function zprint$finish$surround_focus(lines_to_cvec,p__64470,p__64471){
-var vec__64472 = p__64470;
-var focus_begin = cljs.core.nth.call(null,vec__64472,(0),null);
-var focus_end = cljs.core.nth.call(null,vec__64472,(1),null);
-var vec__64475 = p__64471;
-var before = cljs.core.nth.call(null,vec__64475,(0),null);
-var after = cljs.core.nth.call(null,vec__64475,(1),null);
+zprint.finish.surround_focus = (function zprint$finish$surround_focus(lines_to_cvec,p__78940,p__78941){
+var vec__78942 = p__78940;
+var focus_begin = cljs.core.nth.call(null,vec__78942,(0),null);
+var focus_end = cljs.core.nth.call(null,vec__78942,(1),null);
+var vec__78945 = p__78941;
+var before = cljs.core.nth.call(null,vec__78945,(0),null);
+var after = cljs.core.nth.call(null,vec__78945,(1),null);
 var line_count = cljs.core.count.call(null,lines_to_cvec);
 var focus_begin_line = zprint.finish.find_line.call(null,lines_to_cvec,focus_begin);
 var focus_end_line = zprint.finish.find_line.call(null,lines_to_cvec,focus_end);
@@ -605,15 +605,15 @@ return cljs.core.map.call(null,cljs.core.partial.call(null,zprint.finish.find_ra
  *   and figure out a set of cvecs to use.  Don't generate lines
  *   array unless we need to.
  */
-zprint.finish.handle_lines = (function zprint$finish$handle_lines(p__64479,cvec,focus_vec){
-var map__64480 = p__64479;
-var map__64480__$1 = ((((!((map__64480 == null)))?(((((map__64480.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__64480.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__64480):map__64480);
-var options = map__64480__$1;
-var map__64481 = cljs.core.get.call(null,map__64480__$1,new cljs.core.Keyword(null,"output","output",-1105869043));
-var map__64481__$1 = ((((!((map__64481 == null)))?(((((map__64481.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__64481.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__64481):map__64481);
-var focus = cljs.core.get.call(null,map__64481__$1,new cljs.core.Keyword(null,"focus","focus",234677911));
-var lines = cljs.core.get.call(null,map__64481__$1,new cljs.core.Keyword(null,"lines","lines",-700165781));
-var paths = cljs.core.get.call(null,map__64481__$1,new cljs.core.Keyword(null,"paths","paths",-1807389588));
+zprint.finish.handle_lines = (function zprint$finish$handle_lines(p__78949,cvec,focus_vec){
+var map__78950 = p__78949;
+var map__78950__$1 = ((((!((map__78950 == null)))?(((((map__78950.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__78950.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__78950):map__78950);
+var options = map__78950__$1;
+var map__78951 = cljs.core.get.call(null,map__78950__$1,new cljs.core.Keyword(null,"output","output",-1105869043));
+var map__78951__$1 = ((((!((map__78951 == null)))?(((((map__78951.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__78951.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__78951):map__78951);
+var focus = cljs.core.get.call(null,map__78951__$1,new cljs.core.Keyword(null,"focus","focus",234677911));
+var lines = cljs.core.get.call(null,map__78951__$1,new cljs.core.Keyword(null,"lines","lines",-700165781));
+var paths = cljs.core.get.call(null,map__78951__$1,new cljs.core.Keyword(null,"paths","paths",-1807389588));
 if(cljs.core.truth_((function (){var or__3922__auto__ = lines;
 if(cljs.core.truth_(or__3922__auto__)){
 return or__3922__auto__;
@@ -631,10 +631,10 @@ var surround = new cljs.core.Keyword(null,"surround","surround",2016177296).cljs
 var cvec_ranges = (cljs.core.truth_(lines)?zprint.finish.select_lines.call(null,lines_to_cvec,lines):cljs.core.PersistentVector.EMPTY);
 var cvec_ranges__$1 = (cljs.core.truth_(surround)?cljs.core.conj.call(null,cvec_ranges,zprint.finish.surround_focus.call(null,lines_to_cvec,focus_vec,surround)):cvec_ranges);
 var path_vecs = (cljs.core.truth_(paths)?cljs.core.map.call(null,cljs.core.partial.call(null,zprint.focus.range_ssv,cvec),paths):null);
-var path_vecs__$1 = cljs.core.map.call(null,((function (lines_to_cvec,surround,cvec_ranges,cvec_ranges__$1,path_vecs,map__64480,map__64480__$1,options,map__64481,map__64481__$1,focus,lines,paths){
-return (function (p1__64478_SHARP_){
-return zprint.finish.surround_focus.call(null,lines_to_cvec,p1__64478_SHARP_,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(0),(0)], null));
-});})(lines_to_cvec,surround,cvec_ranges,cvec_ranges__$1,path_vecs,map__64480,map__64480__$1,options,map__64481,map__64481__$1,focus,lines,paths))
+var path_vecs__$1 = cljs.core.map.call(null,((function (lines_to_cvec,surround,cvec_ranges,cvec_ranges__$1,path_vecs,map__78950,map__78950__$1,options,map__78951,map__78951__$1,focus,lines,paths){
+return (function (p1__78948_SHARP_){
+return zprint.finish.surround_focus.call(null,lines_to_cvec,p1__78948_SHARP_,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(0),(0)], null));
+});})(lines_to_cvec,surround,cvec_ranges,cvec_ranges__$1,path_vecs,map__78950,map__78950__$1,options,map__78951,map__78951__$1,focus,lines,paths))
 ,path_vecs);
 var cvec_ranges__$2 = (cljs.core.truth_(path_vecs__$1)?cljs.core.concat.call(null,cvec_ranges__$1,path_vecs__$1):cvec_ranges__$1);
 if(cljs.core.empty_QMARK_.call(null,cvec_ranges__$2)){
@@ -647,4 +647,4 @@ return null;
 }
 });
 
-//# sourceMappingURL=finish.js.map?rel=1548888397416
+//# sourceMappingURL=finish.js.map?rel=1549004141831

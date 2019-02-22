@@ -27,18 +27,18 @@ if(((!(escape_QMARK_)) && ((c === "\"")))){
 return rewrite_clj.parser.string.flush_into.call(null,lines,buf);
 } else {
 if((c === "\n")){
-var G__62831 = escape_QMARK_;
-var G__62832 = rewrite_clj.parser.string.flush_into.call(null,lines,buf);
-escape_QMARK_ = G__62831;
-lines = G__62832;
+var G__74442 = escape_QMARK_;
+var G__74443 = rewrite_clj.parser.string.flush_into.call(null,lines,buf);
+escape_QMARK_ = G__74442;
+lines = G__74443;
 continue;
 } else {
 buf.append(c);
 
-var G__62833 = ((!(escape_QMARK_)) && ((c === "\\")));
-var G__62834 = lines;
-escape_QMARK_ = G__62833;
-lines = G__62834;
+var G__74444 = ((!(escape_QMARK_)) && ((c === "\\")));
+var G__74445 = lines;
+escape_QMARK_ = G__74444;
+lines = G__74445;
 continue;
 
 }
@@ -58,4 +58,4 @@ var regex = clojure.string.join.call(null,"\n",lines);
 return rewrite_clj.node.token_node.call(null,cljs.core.re_pattern.call(null,regex),["#\"",cljs.core.str.cljs$core$IFn$_invoke$arity$1(regex),"\""].join(''));
 });
 
-//# sourceMappingURL=string.js.map?rel=1548888394086
+//# sourceMappingURL=string.js.map?rel=1549004131338

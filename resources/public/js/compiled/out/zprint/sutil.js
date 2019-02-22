@@ -70,10 +70,10 @@ if(cljs.core.truth_(sloc)){
 if(cljs.core.truth_(zthing_QMARK_.call(null,cljs.core.first.call(null,sloc)))){
 return i;
 } else {
-var G__64073 = cljs.core.next.call(null,sloc);
-var G__64074 = (i + (1));
-sloc = G__64073;
-i = G__64074;
+var G__77075 = cljs.core.next.call(null,sloc);
+var G__77076 = (i + (1));
+sloc = G__77075;
+i = G__77076;
 continue;
 }
 } else {
@@ -225,8 +225,8 @@ return null;
  *   anything, so there isn't a particularly good sentinal here.
  */
 zprint.sutil.sobj_to_vec = (function zprint$sutil$sobj_to_vec(var_args){
-var G__64076 = arguments.length;
-switch (G__64076) {
+var G__77078 = arguments.length;
+switch (G__77078) {
 case 2:
 return zprint.sutil.sobj_to_vec.cljs$core$IFn$_invoke$arity$2((arguments[(0)]),(arguments[(1)]));
 
@@ -296,13 +296,13 @@ var ns = null;
 var pair_seq__$1 = pair_seq;
 var out = cljs.core.PersistentVector.EMPTY;
 while(true){
-var vec__64078 = cljs.core.first.call(null,pair_seq__$1);
-var seq__64079 = cljs.core.seq.call(null,vec__64078);
-var first__64080 = cljs.core.first.call(null,seq__64079);
-var seq__64079__$1 = cljs.core.next.call(null,seq__64079);
-var k = first__64080;
-var rest_of_pair = seq__64079__$1;
-var pair = vec__64078;
+var vec__77080 = cljs.core.first.call(null,pair_seq__$1);
+var seq__77081 = cljs.core.seq.call(null,vec__77080);
+var first__77082 = cljs.core.first.call(null,seq__77081);
+var seq__77081__$1 = cljs.core.next.call(null,seq__77081);
+var k = first__77082;
+var rest_of_pair = seq__77081__$1;
+var pair = vec__77080;
 var current_ns = ((((rest_of_pair) && ((((k instanceof cljs.core.Keyword)) || ((k instanceof cljs.core.Symbol))))))?cljs.core.namespace.call(null,k):null);
 if(cljs.core.not.call(null,k)){
 if(cljs.core.truth_(ns)){
@@ -314,33 +314,33 @@ return null;
 if(cljs.core.truth_(current_ns)){
 if(cljs.core.truth_(ns)){
 if(cljs.core._EQ_.call(null,ns,current_ns)){
-var G__64081 = ns;
-var G__64082 = cljs.core.next.call(null,pair_seq__$1);
-var G__64083 = cljs.core.conj.call(null,out,cljs.core.cons.call(null,strip_ns.call(null,k),rest_of_pair));
-ns = G__64081;
-pair_seq__$1 = G__64082;
-out = G__64083;
+var G__77083 = ns;
+var G__77084 = cljs.core.next.call(null,pair_seq__$1);
+var G__77085 = cljs.core.conj.call(null,out,cljs.core.cons.call(null,strip_ns.call(null,k),rest_of_pair));
+ns = G__77083;
+pair_seq__$1 = G__77084;
+out = G__77085;
 continue;
 } else {
 return null;
 }
 } else {
-var G__64084 = current_ns;
-var G__64085 = cljs.core.next.call(null,pair_seq__$1);
-var G__64086 = cljs.core.conj.call(null,out,cljs.core.cons.call(null,strip_ns.call(null,k),rest_of_pair));
-ns = G__64084;
-pair_seq__$1 = G__64085;
-out = G__64086;
+var G__77086 = current_ns;
+var G__77087 = cljs.core.next.call(null,pair_seq__$1);
+var G__77088 = cljs.core.conj.call(null,out,cljs.core.cons.call(null,strip_ns.call(null,k),rest_of_pair));
+ns = G__77086;
+pair_seq__$1 = G__77087;
+out = G__77088;
 continue;
 }
 } else {
 if(cljs.core._EQ_.call(null,cljs.core.count.call(null,pair),(1))){
-var G__64087 = ns;
-var G__64088 = cljs.core.next.call(null,pair_seq__$1);
-var G__64089 = cljs.core.conj.call(null,out,pair);
-ns = G__64087;
-pair_seq__$1 = G__64088;
-out = G__64089;
+var G__77089 = ns;
+var G__77090 = cljs.core.next.call(null,pair_seq__$1);
+var G__77091 = cljs.core.conj.call(null,out,pair);
+ns = G__77089;
+pair_seq__$1 = G__77090;
+out = G__77091;
 continue;
 } else {
 return null;
@@ -355,63 +355,63 @@ break;
  *   call the function of no arguments passed in.
  */
 zprint.sutil.sredef_call = (function zprint$sutil$sredef_call(body_fn){
-var zstring64090 = zprint.zfns.zstring;
-var znumstr64091 = zprint.zfns.znumstr;
-var zcomment_QMARK_64092 = zprint.zfns.zcomment_QMARK_;
-var zsexpr64093 = zprint.zfns.zsexpr;
-var zseqnws64094 = zprint.zfns.zseqnws;
-var zmap_right64095 = zprint.zfns.zmap_right;
-var zfocus_style64096 = zprint.zfns.zfocus_style;
-var zfirst64097 = zprint.zfns.zfirst;
-var zfirst_no_comment64098 = zprint.zfns.zfirst_no_comment;
-var zsecond64099 = zprint.zfns.zsecond;
-var zthird64100 = zprint.zfns.zthird;
-var zfourth64101 = zprint.zfns.zfourth;
-var znthnext64102 = zprint.zfns.znthnext;
-var zcount64103 = zprint.zfns.zcount;
-var zmap64104 = zprint.zfns.zmap;
-var zmap_w_nl64105 = zprint.zfns.zmap_w_nl;
-var zanonfn_QMARK_64106 = zprint.zfns.zanonfn_QMARK_;
-var zfn_obj_QMARK_64107 = zprint.zfns.zfn_obj_QMARK_;
-var zfocus64108 = zprint.zfns.zfocus;
-var zfind_path64109 = zprint.zfns.zfind_path;
-var zwhitespace_QMARK_64110 = zprint.zfns.zwhitespace_QMARK_;
-var zlist_QMARK_64111 = zprint.zfns.zlist_QMARK_;
-var zvector_QMARK_64112 = zprint.zfns.zvector_QMARK_;
-var zmap_QMARK_64113 = zprint.zfns.zmap_QMARK_;
-var zset_QMARK_64114 = zprint.zfns.zset_QMARK_;
-var zcoll_QMARK_64115 = zprint.zfns.zcoll_QMARK_;
-var zmeta_QMARK_64116 = zprint.zfns.zmeta_QMARK_;
-var zuneval_QMARK_64117 = zprint.zfns.zuneval_QMARK_;
-var ztag64118 = zprint.zfns.ztag;
-var zparseuneval64119 = zprint.zfns.zparseuneval;
-var zlast64120 = zprint.zfns.zlast;
-var zarray_QMARK_64121 = zprint.zfns.zarray_QMARK_;
-var zatom_QMARK_64122 = zprint.zfns.zatom_QMARK_;
-var zderef64123 = zprint.zfns.zderef;
-var zrecord_QMARK_64124 = zprint.zfns.zrecord_QMARK_;
-var zns_QMARK_64125 = zprint.zfns.zns_QMARK_;
-var zobj_to_vec64126 = zprint.zfns.zobj_to_vec;
-var zexpandarray64127 = zprint.zfns.zexpandarray;
-var znewline_QMARK_64128 = zprint.zfns.znewline_QMARK_;
-var zwhitespaceorcomment_QMARK_64129 = zprint.zfns.zwhitespaceorcomment_QMARK_;
-var zmap_all64130 = zprint.zfns.zmap_all;
-var zfuture_QMARK_64131 = zprint.zfns.zfuture_QMARK_;
-var zpromise_QMARK_64132 = zprint.zfns.zpromise_QMARK_;
-var zkeyword_QMARK_64133 = zprint.zfns.zkeyword_QMARK_;
-var zdelay_QMARK_64134 = zprint.zfns.zdelay_QMARK_;
-var zconstant_QMARK_64135 = zprint.zfns.zconstant_QMARK_;
-var zagent_QMARK_64136 = zprint.zfns.zagent_QMARK_;
-var zreader_macro_QMARK_64137 = zprint.zfns.zreader_macro_QMARK_;
-var zarray_to_shift_seq64138 = zprint.zfns.zarray_to_shift_seq;
-var zdotdotdot64139 = zprint.zfns.zdotdotdot;
-var zsymbol_QMARK_64140 = zprint.zfns.zsymbol_QMARK_;
-var znil_QMARK_64141 = zprint.zfns.znil_QMARK_;
-var zreader_cond_w_symbol_QMARK_64142 = zprint.zfns.zreader_cond_w_symbol_QMARK_;
-var zreader_cond_w_coll_QMARK_64143 = zprint.zfns.zreader_cond_w_coll_QMARK_;
-var zlift_ns64144 = zprint.zfns.zlift_ns;
-var zinlinecomment_QMARK_64145 = zprint.zfns.zinlinecomment_QMARK_;
-var zfind64146 = zprint.zfns.zfind;
+var zstring77092 = zprint.zfns.zstring;
+var znumstr77093 = zprint.zfns.znumstr;
+var zcomment_QMARK_77094 = zprint.zfns.zcomment_QMARK_;
+var zsexpr77095 = zprint.zfns.zsexpr;
+var zseqnws77096 = zprint.zfns.zseqnws;
+var zmap_right77097 = zprint.zfns.zmap_right;
+var zfocus_style77098 = zprint.zfns.zfocus_style;
+var zfirst77099 = zprint.zfns.zfirst;
+var zfirst_no_comment77100 = zprint.zfns.zfirst_no_comment;
+var zsecond77101 = zprint.zfns.zsecond;
+var zthird77102 = zprint.zfns.zthird;
+var zfourth77103 = zprint.zfns.zfourth;
+var znthnext77104 = zprint.zfns.znthnext;
+var zcount77105 = zprint.zfns.zcount;
+var zmap77106 = zprint.zfns.zmap;
+var zmap_w_nl77107 = zprint.zfns.zmap_w_nl;
+var zanonfn_QMARK_77108 = zprint.zfns.zanonfn_QMARK_;
+var zfn_obj_QMARK_77109 = zprint.zfns.zfn_obj_QMARK_;
+var zfocus77110 = zprint.zfns.zfocus;
+var zfind_path77111 = zprint.zfns.zfind_path;
+var zwhitespace_QMARK_77112 = zprint.zfns.zwhitespace_QMARK_;
+var zlist_QMARK_77113 = zprint.zfns.zlist_QMARK_;
+var zvector_QMARK_77114 = zprint.zfns.zvector_QMARK_;
+var zmap_QMARK_77115 = zprint.zfns.zmap_QMARK_;
+var zset_QMARK_77116 = zprint.zfns.zset_QMARK_;
+var zcoll_QMARK_77117 = zprint.zfns.zcoll_QMARK_;
+var zmeta_QMARK_77118 = zprint.zfns.zmeta_QMARK_;
+var zuneval_QMARK_77119 = zprint.zfns.zuneval_QMARK_;
+var ztag77120 = zprint.zfns.ztag;
+var zparseuneval77121 = zprint.zfns.zparseuneval;
+var zlast77122 = zprint.zfns.zlast;
+var zarray_QMARK_77123 = zprint.zfns.zarray_QMARK_;
+var zatom_QMARK_77124 = zprint.zfns.zatom_QMARK_;
+var zderef77125 = zprint.zfns.zderef;
+var zrecord_QMARK_77126 = zprint.zfns.zrecord_QMARK_;
+var zns_QMARK_77127 = zprint.zfns.zns_QMARK_;
+var zobj_to_vec77128 = zprint.zfns.zobj_to_vec;
+var zexpandarray77129 = zprint.zfns.zexpandarray;
+var znewline_QMARK_77130 = zprint.zfns.znewline_QMARK_;
+var zwhitespaceorcomment_QMARK_77131 = zprint.zfns.zwhitespaceorcomment_QMARK_;
+var zmap_all77132 = zprint.zfns.zmap_all;
+var zfuture_QMARK_77133 = zprint.zfns.zfuture_QMARK_;
+var zpromise_QMARK_77134 = zprint.zfns.zpromise_QMARK_;
+var zkeyword_QMARK_77135 = zprint.zfns.zkeyword_QMARK_;
+var zdelay_QMARK_77136 = zprint.zfns.zdelay_QMARK_;
+var zconstant_QMARK_77137 = zprint.zfns.zconstant_QMARK_;
+var zagent_QMARK_77138 = zprint.zfns.zagent_QMARK_;
+var zreader_macro_QMARK_77139 = zprint.zfns.zreader_macro_QMARK_;
+var zarray_to_shift_seq77140 = zprint.zfns.zarray_to_shift_seq;
+var zdotdotdot77141 = zprint.zfns.zdotdotdot;
+var zsymbol_QMARK_77142 = zprint.zfns.zsymbol_QMARK_;
+var znil_QMARK_77143 = zprint.zfns.znil_QMARK_;
+var zreader_cond_w_symbol_QMARK_77144 = zprint.zfns.zreader_cond_w_symbol_QMARK_;
+var zreader_cond_w_coll_QMARK_77145 = zprint.zfns.zreader_cond_w_coll_QMARK_;
+var zlift_ns77146 = zprint.zfns.zlift_ns;
+var zinlinecomment_QMARK_77147 = zprint.zfns.zinlinecomment_QMARK_;
+var zfind77148 = zprint.zfns.zfind;
 zprint.zfns.zstring = zprint.sutil.sstring;
 
 zprint.zfns.znumstr = zprint.sutil.snumstr;
@@ -527,119 +527,119 @@ zprint.zfns.zinlinecomment_QMARK_ = cljs.core.constantly.call(null,false);
 zprint.zfns.zfind = zprint.sutil.sfind;
 
 try{return body_fn.call(null);
-}finally {zprint.zfns.zfind = zfind64146;
+}finally {zprint.zfns.zfind = zfind77148;
 
-zprint.zfns.zinlinecomment_QMARK_ = zinlinecomment_QMARK_64145;
+zprint.zfns.zinlinecomment_QMARK_ = zinlinecomment_QMARK_77147;
 
-zprint.zfns.zlift_ns = zlift_ns64144;
+zprint.zfns.zlift_ns = zlift_ns77146;
 
-zprint.zfns.zreader_cond_w_coll_QMARK_ = zreader_cond_w_coll_QMARK_64143;
+zprint.zfns.zreader_cond_w_coll_QMARK_ = zreader_cond_w_coll_QMARK_77145;
 
-zprint.zfns.zreader_cond_w_symbol_QMARK_ = zreader_cond_w_symbol_QMARK_64142;
+zprint.zfns.zreader_cond_w_symbol_QMARK_ = zreader_cond_w_symbol_QMARK_77144;
 
-zprint.zfns.znil_QMARK_ = znil_QMARK_64141;
+zprint.zfns.znil_QMARK_ = znil_QMARK_77143;
 
-zprint.zfns.zsymbol_QMARK_ = zsymbol_QMARK_64140;
+zprint.zfns.zsymbol_QMARK_ = zsymbol_QMARK_77142;
 
-zprint.zfns.zdotdotdot = zdotdotdot64139;
+zprint.zfns.zdotdotdot = zdotdotdot77141;
 
-zprint.zfns.zarray_to_shift_seq = zarray_to_shift_seq64138;
+zprint.zfns.zarray_to_shift_seq = zarray_to_shift_seq77140;
 
-zprint.zfns.zreader_macro_QMARK_ = zreader_macro_QMARK_64137;
+zprint.zfns.zreader_macro_QMARK_ = zreader_macro_QMARK_77139;
 
-zprint.zfns.zagent_QMARK_ = zagent_QMARK_64136;
+zprint.zfns.zagent_QMARK_ = zagent_QMARK_77138;
 
-zprint.zfns.zconstant_QMARK_ = zconstant_QMARK_64135;
+zprint.zfns.zconstant_QMARK_ = zconstant_QMARK_77137;
 
-zprint.zfns.zdelay_QMARK_ = zdelay_QMARK_64134;
+zprint.zfns.zdelay_QMARK_ = zdelay_QMARK_77136;
 
-zprint.zfns.zkeyword_QMARK_ = zkeyword_QMARK_64133;
+zprint.zfns.zkeyword_QMARK_ = zkeyword_QMARK_77135;
 
-zprint.zfns.zpromise_QMARK_ = zpromise_QMARK_64132;
+zprint.zfns.zpromise_QMARK_ = zpromise_QMARK_77134;
 
-zprint.zfns.zfuture_QMARK_ = zfuture_QMARK_64131;
+zprint.zfns.zfuture_QMARK_ = zfuture_QMARK_77133;
 
-zprint.zfns.zmap_all = zmap_all64130;
+zprint.zfns.zmap_all = zmap_all77132;
 
-zprint.zfns.zwhitespaceorcomment_QMARK_ = zwhitespaceorcomment_QMARK_64129;
+zprint.zfns.zwhitespaceorcomment_QMARK_ = zwhitespaceorcomment_QMARK_77131;
 
-zprint.zfns.znewline_QMARK_ = znewline_QMARK_64128;
+zprint.zfns.znewline_QMARK_ = znewline_QMARK_77130;
 
-zprint.zfns.zexpandarray = zexpandarray64127;
+zprint.zfns.zexpandarray = zexpandarray77129;
 
-zprint.zfns.zobj_to_vec = zobj_to_vec64126;
+zprint.zfns.zobj_to_vec = zobj_to_vec77128;
 
-zprint.zfns.zns_QMARK_ = zns_QMARK_64125;
+zprint.zfns.zns_QMARK_ = zns_QMARK_77127;
 
-zprint.zfns.zrecord_QMARK_ = zrecord_QMARK_64124;
+zprint.zfns.zrecord_QMARK_ = zrecord_QMARK_77126;
 
-zprint.zfns.zderef = zderef64123;
+zprint.zfns.zderef = zderef77125;
 
-zprint.zfns.zatom_QMARK_ = zatom_QMARK_64122;
+zprint.zfns.zatom_QMARK_ = zatom_QMARK_77124;
 
-zprint.zfns.zarray_QMARK_ = zarray_QMARK_64121;
+zprint.zfns.zarray_QMARK_ = zarray_QMARK_77123;
 
-zprint.zfns.zlast = zlast64120;
+zprint.zfns.zlast = zlast77122;
 
-zprint.zfns.zparseuneval = zparseuneval64119;
+zprint.zfns.zparseuneval = zparseuneval77121;
 
-zprint.zfns.ztag = ztag64118;
+zprint.zfns.ztag = ztag77120;
 
-zprint.zfns.zuneval_QMARK_ = zuneval_QMARK_64117;
+zprint.zfns.zuneval_QMARK_ = zuneval_QMARK_77119;
 
-zprint.zfns.zmeta_QMARK_ = zmeta_QMARK_64116;
+zprint.zfns.zmeta_QMARK_ = zmeta_QMARK_77118;
 
-zprint.zfns.zcoll_QMARK_ = zcoll_QMARK_64115;
+zprint.zfns.zcoll_QMARK_ = zcoll_QMARK_77117;
 
-zprint.zfns.zset_QMARK_ = zset_QMARK_64114;
+zprint.zfns.zset_QMARK_ = zset_QMARK_77116;
 
-zprint.zfns.zmap_QMARK_ = zmap_QMARK_64113;
+zprint.zfns.zmap_QMARK_ = zmap_QMARK_77115;
 
-zprint.zfns.zvector_QMARK_ = zvector_QMARK_64112;
+zprint.zfns.zvector_QMARK_ = zvector_QMARK_77114;
 
-zprint.zfns.zlist_QMARK_ = zlist_QMARK_64111;
+zprint.zfns.zlist_QMARK_ = zlist_QMARK_77113;
 
-zprint.zfns.zwhitespace_QMARK_ = zwhitespace_QMARK_64110;
+zprint.zfns.zwhitespace_QMARK_ = zwhitespace_QMARK_77112;
 
-zprint.zfns.zfind_path = zfind_path64109;
+zprint.zfns.zfind_path = zfind_path77111;
 
-zprint.zfns.zfocus = zfocus64108;
+zprint.zfns.zfocus = zfocus77110;
 
-zprint.zfns.zfn_obj_QMARK_ = zfn_obj_QMARK_64107;
+zprint.zfns.zfn_obj_QMARK_ = zfn_obj_QMARK_77109;
 
-zprint.zfns.zanonfn_QMARK_ = zanonfn_QMARK_64106;
+zprint.zfns.zanonfn_QMARK_ = zanonfn_QMARK_77108;
 
-zprint.zfns.zmap_w_nl = zmap_w_nl64105;
+zprint.zfns.zmap_w_nl = zmap_w_nl77107;
 
-zprint.zfns.zmap = zmap64104;
+zprint.zfns.zmap = zmap77106;
 
-zprint.zfns.zcount = zcount64103;
+zprint.zfns.zcount = zcount77105;
 
-zprint.zfns.znthnext = znthnext64102;
+zprint.zfns.znthnext = znthnext77104;
 
-zprint.zfns.zfourth = zfourth64101;
+zprint.zfns.zfourth = zfourth77103;
 
-zprint.zfns.zthird = zthird64100;
+zprint.zfns.zthird = zthird77102;
 
-zprint.zfns.zsecond = zsecond64099;
+zprint.zfns.zsecond = zsecond77101;
 
-zprint.zfns.zfirst_no_comment = zfirst_no_comment64098;
+zprint.zfns.zfirst_no_comment = zfirst_no_comment77100;
 
-zprint.zfns.zfirst = zfirst64097;
+zprint.zfns.zfirst = zfirst77099;
 
-zprint.zfns.zfocus_style = zfocus_style64096;
+zprint.zfns.zfocus_style = zfocus_style77098;
 
-zprint.zfns.zmap_right = zmap_right64095;
+zprint.zfns.zmap_right = zmap_right77097;
 
-zprint.zfns.zseqnws = zseqnws64094;
+zprint.zfns.zseqnws = zseqnws77096;
 
-zprint.zfns.zsexpr = zsexpr64093;
+zprint.zfns.zsexpr = zsexpr77095;
 
-zprint.zfns.zcomment_QMARK_ = zcomment_QMARK_64092;
+zprint.zfns.zcomment_QMARK_ = zcomment_QMARK_77094;
 
-zprint.zfns.znumstr = znumstr64091;
+zprint.zfns.znumstr = znumstr77093;
 
-zprint.zfns.zstring = zstring64090;
+zprint.zfns.zstring = zstring77092;
 }});
 
-//# sourceMappingURL=sutil.js.map?rel=1548888396166
+//# sourceMappingURL=sutil.js.map?rel=1549004136848

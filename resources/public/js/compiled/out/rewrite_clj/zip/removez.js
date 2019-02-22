@@ -71,17 +71,17 @@ return or__3922__auto__;
 } else {
 return rewrite_clj.zip.move.leftmost_QMARK_.call(null,zloc);
 }
-})())?rewrite_clj.zip.removez.remove_preceding_space.call(null,zloc,(function (p1__64544_SHARP_){
-var and__3911__auto__ = rewrite_clj.zip.whitespace.whitespace_QMARK_.call(null,p1__64544_SHARP_);
+})())?rewrite_clj.zip.removez.remove_preceding_space.call(null,zloc,(function (p1__79076_SHARP_){
+var and__3911__auto__ = rewrite_clj.zip.whitespace.whitespace_QMARK_.call(null,p1__79076_SHARP_);
 if(cljs.core.truth_(and__3911__auto__)){
-return cljs.core.not.call(null,rewrite_clj.zip.whitespace.linebreak_QMARK_.call(null,p1__64544_SHARP_));
+return cljs.core.not.call(null,rewrite_clj.zip.whitespace.linebreak_QMARK_.call(null,p1__79076_SHARP_));
 } else {
 return and__3911__auto__;
 }
-})):zloc),(function (p1__64545_SHARP_){
-var and__3911__auto__ = rewrite_clj.zip.whitespace.whitespace_QMARK_.call(null,p1__64545_SHARP_);
+})):zloc),(function (p1__79077_SHARP_){
+var and__3911__auto__ = rewrite_clj.zip.whitespace.whitespace_QMARK_.call(null,p1__79077_SHARP_);
 if(cljs.core.truth_(and__3911__auto__)){
-return cljs.core.not.call(null,rewrite_clj.zip.whitespace.linebreak_QMARK_.call(null,p1__64545_SHARP_));
+return cljs.core.not.call(null,rewrite_clj.zip.whitespace.linebreak_QMARK_.call(null,p1__79077_SHARP_));
 } else {
 return and__3911__auto__;
 }
@@ -94,4 +94,4 @@ throw (new Error("Assert failed: %"));
 return _PERCENT_;
 });
 
-//# sourceMappingURL=removez.js.map?rel=1548888397562
+//# sourceMappingURL=removez.js.map?rel=1549004142163

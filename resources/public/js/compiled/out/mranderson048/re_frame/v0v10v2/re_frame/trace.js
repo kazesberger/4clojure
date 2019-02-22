@@ -37,13 +37,13 @@ return null;
 mranderson048.re_frame.v0v10v2.re_frame.trace.next_id = (function mranderson048$re_frame$v0v10v2$re_frame$trace$next_id(){
 return cljs.core.swap_BANG_.call(null,mranderson048.re_frame.v0v10v2.re_frame.trace.id,cljs.core.inc);
 });
-mranderson048.re_frame.v0v10v2.re_frame.trace.start_trace = (function mranderson048$re_frame$v0v10v2$re_frame$trace$start_trace(p__63519){
-var map__63520 = p__63519;
-var map__63520__$1 = ((((!((map__63520 == null)))?(((((map__63520.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__63520.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__63520):map__63520);
-var operation = cljs.core.get.call(null,map__63520__$1,new cljs.core.Keyword(null,"operation","operation",-1267664310));
-var op_type = cljs.core.get.call(null,map__63520__$1,new cljs.core.Keyword(null,"op-type","op-type",-1636141668));
-var tags = cljs.core.get.call(null,map__63520__$1,new cljs.core.Keyword(null,"tags","tags",1771418977));
-var child_of = cljs.core.get.call(null,map__63520__$1,new cljs.core.Keyword(null,"child-of","child-of",-903376662));
+mranderson048.re_frame.v0v10v2.re_frame.trace.start_trace = (function mranderson048$re_frame$v0v10v2$re_frame$trace$start_trace(p__75628){
+var map__75629 = p__75628;
+var map__75629__$1 = ((((!((map__75629 == null)))?(((((map__75629.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__75629.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__75629):map__75629);
+var operation = cljs.core.get.call(null,map__75629__$1,new cljs.core.Keyword(null,"operation","operation",-1267664310));
+var op_type = cljs.core.get.call(null,map__75629__$1,new cljs.core.Keyword(null,"op-type","op-type",-1636141668));
+var tags = cljs.core.get.call(null,map__75629__$1,new cljs.core.Keyword(null,"tags","tags",1771418977));
+var child_of = cljs.core.get.call(null,map__75629__$1,new cljs.core.Keyword(null,"child-of","child-of",-903376662));
 return new cljs.core.PersistentArrayMap(null, 6, [new cljs.core.Keyword(null,"id","id",-1388402092),mranderson048.re_frame.v0v10v2.re_frame.trace.next_id.call(null),new cljs.core.Keyword(null,"operation","operation",-1267664310),operation,new cljs.core.Keyword(null,"op-type","op-type",-1636141668),op_type,new cljs.core.Keyword(null,"tags","tags",1771418977),tags,new cljs.core.Keyword(null,"child-of","child-of",-903376662),(function (){var or__3922__auto__ = child_of;
 if(cljs.core.truth_(or__3922__auto__)){
 return or__3922__auto__;
@@ -53,4 +53,4 @@ return new cljs.core.Keyword(null,"id","id",-1388402092).cljs$core$IFn$_invoke$a
 })(),new cljs.core.Keyword(null,"start","start",-355208981),mranderson048.re_frame.v0v10v2.re_frame.interop.now.call(null)], null);
 });
 
-//# sourceMappingURL=trace.js.map?rel=1548888395453
+//# sourceMappingURL=trace.js.map?rel=1549004134694

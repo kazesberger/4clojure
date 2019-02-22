@@ -31,8 +31,8 @@ throw (new Error("Assert failed: (seq? zloc)"));
 var temp__4655__auto__ = rewrite_clj.zip.move.down.call(null,zloc);
 if(cljs.core.truth_(temp__4655__auto__)){
 var n0 = temp__4655__auto__;
-var G__64629 = f.call(null,n0);
-var G__64629__$1 = (((G__64629 == null))?null:cljs.core.iterate.call(null,((function (G__64629,n0,temp__4655__auto__){
+var G__79255 = f.call(null,n0);
+var G__79255__$1 = (((G__79255 == null))?null:cljs.core.iterate.call(null,((function (G__79255,n0,temp__4655__auto__){
 return (function (loc){
 var temp__4655__auto____$1 = rewrite_clj.zip.move.right.call(null,loc);
 if(cljs.core.truth_(temp__4655__auto____$1)){
@@ -41,14 +41,14 @@ return f.call(null,n);
 } else {
 return null;
 }
-});})(G__64629,n0,temp__4655__auto__))
-,G__64629));
-var G__64629__$2 = (((G__64629__$1 == null))?null:cljs.core.take_while.call(null,cljs.core.identity,G__64629__$1));
-var G__64629__$3 = (((G__64629__$2 == null))?null:cljs.core.last.call(null,G__64629__$2));
-if((G__64629__$3 == null)){
+});})(G__79255,n0,temp__4655__auto__))
+,G__79255));
+var G__79255__$2 = (((G__79255__$1 == null))?null:cljs.core.take_while.call(null,cljs.core.identity,G__79255__$1));
+var G__79255__$3 = (((G__79255__$2 == null))?null:cljs.core.last.call(null,G__79255__$2));
+if((G__79255__$3 == null)){
 return null;
 } else {
-return rewrite_clj.zip.move.up.call(null,G__64629__$3);
+return rewrite_clj.zip.move.up.call(null,G__79255__$3);
 }
 } else {
 return zloc;
@@ -81,16 +81,16 @@ var v0 = temp__4655__auto__;
 var temp__4655__auto____$1 = f.call(null,v0);
 if(cljs.core.truth_(temp__4655__auto____$1)){
 var v = temp__4655__auto____$1;
-var G__64630 = rewrite_clj.zip.move.right.call(null,v);
-var G__64631 = rewrite_clj.zip.move.up.call(null,v);
-loc = G__64630;
-parent = G__64631;
+var G__79256 = rewrite_clj.zip.move.right.call(null,v);
+var G__79257 = rewrite_clj.zip.move.up.call(null,v);
+loc = G__79256;
+parent = G__79257;
 continue;
 } else {
-var G__64632 = rewrite_clj.zip.move.right.call(null,v0);
-var G__64633 = parent;
-loc = G__64632;
-parent = G__64633;
+var G__79258 = rewrite_clj.zip.move.right.call(null,v0);
+var G__79259 = parent;
+loc = G__79258;
+parent = G__79259;
 continue;
 }
 } else {
@@ -124,16 +124,16 @@ return parent;
 var temp__4655__auto__ = f.call(null,loc);
 if(cljs.core.truth_(temp__4655__auto__)){
 var v = temp__4655__auto__;
-var G__64634 = rewrite_clj.zip.move.right.call(null,rewrite_clj.zip.move.right.call(null,v));
-var G__64635 = rewrite_clj.zip.move.up.call(null,v);
-loc = G__64634;
-parent = G__64635;
+var G__79260 = rewrite_clj.zip.move.right.call(null,rewrite_clj.zip.move.right.call(null,v));
+var G__79261 = rewrite_clj.zip.move.up.call(null,v);
+loc = G__79260;
+parent = G__79261;
 continue;
 } else {
-var G__64636 = rewrite_clj.zip.move.right.call(null,rewrite_clj.zip.move.right.call(null,loc));
-var G__64637 = parent;
-loc = G__64636;
-parent = G__64637;
+var G__79262 = rewrite_clj.zip.move.right.call(null,rewrite_clj.zip.move.right.call(null,loc));
+var G__79263 = parent;
+loc = G__79262;
+parent = G__79263;
 continue;
 }
 }
@@ -177,21 +177,21 @@ throw (new Error("Assert failed: (or (map? zloc) (and (seq? zloc) (integer? k)))
 }
 
 if(cljs.core.truth_(rewrite_clj.zip.seqz.map_QMARK_.call(null,zloc))){
-var G__64638 = zloc;
-var G__64638__$1 = (((G__64638 == null))?null:rewrite_clj.zip.move.down.call(null,G__64638));
-var G__64638__$2 = (((G__64638__$1 == null))?null:rewrite_clj.zip.findz.find_value.call(null,G__64638__$1,k));
-if((G__64638__$2 == null)){
+var G__79264 = zloc;
+var G__79264__$1 = (((G__79264 == null))?null:rewrite_clj.zip.move.down.call(null,G__79264));
+var G__79264__$2 = (((G__79264__$1 == null))?null:rewrite_clj.zip.findz.find_value.call(null,G__79264__$1,k));
+if((G__79264__$2 == null)){
 return null;
 } else {
-return rewrite_clj.zip.move.right.call(null,G__64638__$2);
+return rewrite_clj.zip.move.right.call(null,G__79264__$2);
 }
 } else {
-return cljs.core.nth.call(null,(function (){var G__64639 = rewrite_clj.zip.move.down.call(null,zloc);
-var G__64639__$1 = (((G__64639 == null))?null:cljs.core.iterate.call(null,rewrite_clj.zip.move.right,G__64639));
-if((G__64639__$1 == null)){
+return cljs.core.nth.call(null,(function (){var G__79265 = rewrite_clj.zip.move.down.call(null,zloc);
+var G__79265__$1 = (((G__79265 == null))?null:cljs.core.iterate.call(null,rewrite_clj.zip.move.right,G__79265));
+if((G__79265__$1 == null)){
 return null;
 } else {
-return cljs.core.take_while.call(null,cljs.core.identity,G__64639__$1);
+return cljs.core.take_while.call(null,cljs.core.identity,G__79265__$1);
 }
 })(),k);
 }
@@ -213,4 +213,4 @@ throw (new Error(["index out of bounds: ",cljs.core.str.cljs$core$IFn$_invoke$ar
 }
 });
 
-//# sourceMappingURL=seqz.js.map?rel=1548888397775
+//# sourceMappingURL=seqz.js.map?rel=1549004142604

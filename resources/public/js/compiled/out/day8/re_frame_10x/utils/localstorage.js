@@ -15,8 +15,8 @@ return [cljs.core.str.cljs$core$IFn$_invoke$arity$1(day8.re_frame_10x.utils.loca
  * Gets a re-frame-10x value from local storage.
  */
 day8.re_frame_10x.utils.localstorage.get = (function day8$re_frame_10x$utils$localstorage$get(var_args){
-var G__67089 = arguments.length;
-switch (G__67089) {
+var G__83193 = arguments.length;
+switch (G__83193) {
 case 1:
 return day8.re_frame_10x.utils.localstorage.get.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
 
@@ -56,59 +56,59 @@ return day8.re_frame_10x.utils.localstorage.storage.set(day8.re_frame_10x.utils.
  * Deletes all re-frame-10x config keys
  */
 day8.re_frame_10x.utils.localstorage.delete_all_keys_BANG_ = (function day8$re_frame_10x$utils$localstorage$delete_all_keys_BANG_(){
-var seq__67091 = cljs.core.seq.call(null,Object.keys(localStorage));
-var chunk__67092 = null;
-var count__67093 = (0);
-var i__67094 = (0);
+var seq__83195 = cljs.core.seq.call(null,Object.keys(localStorage));
+var chunk__83196 = null;
+var count__83197 = (0);
+var i__83198 = (0);
 while(true){
-if((i__67094 < count__67093)){
-var k = cljs.core._nth.call(null,chunk__67092,i__67094);
+if((i__83198 < count__83197)){
+var k = cljs.core._nth.call(null,chunk__83196,i__83198);
 if(clojure.string.starts_with_QMARK_.call(null,k,day8.re_frame_10x.utils.localstorage.safe_prefix)){
 day8.re_frame_10x.utils.localstorage.storage.remove(k);
 } else {
 }
 
 
-var G__67095 = seq__67091;
-var G__67096 = chunk__67092;
-var G__67097 = count__67093;
-var G__67098 = (i__67094 + (1));
-seq__67091 = G__67095;
-chunk__67092 = G__67096;
-count__67093 = G__67097;
-i__67094 = G__67098;
+var G__83199 = seq__83195;
+var G__83200 = chunk__83196;
+var G__83201 = count__83197;
+var G__83202 = (i__83198 + (1));
+seq__83195 = G__83199;
+chunk__83196 = G__83200;
+count__83197 = G__83201;
+i__83198 = G__83202;
 continue;
 } else {
-var temp__4657__auto__ = cljs.core.seq.call(null,seq__67091);
+var temp__4657__auto__ = cljs.core.seq.call(null,seq__83195);
 if(temp__4657__auto__){
-var seq__67091__$1 = temp__4657__auto__;
-if(cljs.core.chunked_seq_QMARK_.call(null,seq__67091__$1)){
-var c__4319__auto__ = cljs.core.chunk_first.call(null,seq__67091__$1);
-var G__67099 = cljs.core.chunk_rest.call(null,seq__67091__$1);
-var G__67100 = c__4319__auto__;
-var G__67101 = cljs.core.count.call(null,c__4319__auto__);
-var G__67102 = (0);
-seq__67091 = G__67099;
-chunk__67092 = G__67100;
-count__67093 = G__67101;
-i__67094 = G__67102;
+var seq__83195__$1 = temp__4657__auto__;
+if(cljs.core.chunked_seq_QMARK_.call(null,seq__83195__$1)){
+var c__4319__auto__ = cljs.core.chunk_first.call(null,seq__83195__$1);
+var G__83203 = cljs.core.chunk_rest.call(null,seq__83195__$1);
+var G__83204 = c__4319__auto__;
+var G__83205 = cljs.core.count.call(null,c__4319__auto__);
+var G__83206 = (0);
+seq__83195 = G__83203;
+chunk__83196 = G__83204;
+count__83197 = G__83205;
+i__83198 = G__83206;
 continue;
 } else {
-var k = cljs.core.first.call(null,seq__67091__$1);
+var k = cljs.core.first.call(null,seq__83195__$1);
 if(clojure.string.starts_with_QMARK_.call(null,k,day8.re_frame_10x.utils.localstorage.safe_prefix)){
 day8.re_frame_10x.utils.localstorage.storage.remove(k);
 } else {
 }
 
 
-var G__67103 = cljs.core.next.call(null,seq__67091__$1);
-var G__67104 = null;
-var G__67105 = (0);
-var G__67106 = (0);
-seq__67091 = G__67103;
-chunk__67092 = G__67104;
-count__67093 = G__67105;
-i__67094 = G__67106;
+var G__83207 = cljs.core.next.call(null,seq__83195__$1);
+var G__83208 = null;
+var G__83209 = (0);
+var G__83210 = (0);
+seq__83195 = G__83207;
+chunk__83196 = G__83208;
+count__83197 = G__83209;
+i__83198 = G__83210;
 continue;
 }
 } else {
@@ -119,4 +119,4 @@ break;
 }
 });
 
-//# sourceMappingURL=localstorage.js.map?rel=1548888402453
+//# sourceMappingURL=localstorage.js.map?rel=1549004152188

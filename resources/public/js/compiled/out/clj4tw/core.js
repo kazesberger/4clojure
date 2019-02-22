@@ -35,4 +35,4 @@ return clj4tw.core.mount_root.call(null);
 });
 goog.exportSymbol('clj4tw.core.init', clj4tw.core.init);
 
-//# sourceMappingURL=core.js.map?rel=1548889719358
+//# sourceMappingURL=core.js.map?rel=1549004117716

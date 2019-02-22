@@ -36,9 +36,9 @@ clj4tw.views.about_panel = (function clj4tw$views$about_panel(){
 return new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, [re_com.core.v_box,new cljs.core.Keyword(null,"gap","gap",80255254),"1em",new cljs.core.Keyword(null,"children","children",-940561982),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [clj4tw.views.about_title], null),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [clj4tw.views.link_to_home_page], null)], null)], null);
 });
 clj4tw.views.panels = (function clj4tw$views$panels(panel_name){
-var G__61077 = panel_name;
-var G__61077__$1 = (((G__61077 instanceof cljs.core.Keyword))?G__61077.fqn:null);
-switch (G__61077__$1) {
+var G__68651 = panel_name;
+var G__68651__$1 = (((G__68651 instanceof cljs.core.Keyword))?G__68651.fqn:null);
+switch (G__68651__$1) {
 case "home-panel":
 return new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [clj4tw.views.home_panel], null);
 
@@ -60,4 +60,4 @@ var active_panel = re_frame.core.subscribe.call(null,new cljs.core.PersistentVec
 return new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, [re_com.core.v_box,new cljs.core.Keyword(null,"height","height",1025178622),"100%",new cljs.core.Keyword(null,"children","children",-940561982),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [clj4tw.views.panels,cljs.core.deref.call(null,active_panel)], null)], null)], null);
 });
 
-//# sourceMappingURL=views.js.map?rel=1548888391239
+//# sourceMappingURL=views.js.map?rel=1549004117701
