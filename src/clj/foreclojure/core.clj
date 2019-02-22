@@ -33,8 +33,8 @@
 
 (def ^:dynamic *block-server* false)
 
-(defroutes spa-route
-  (GET "/re-frame" [] (resource-response "cljs.html" {:root "public"})))
+;(defroutes spa-route
+;  (GET "/re-frame" [] (resource-response "cljs.html" {:root "public"})))
 
 
 (defroutes resource-routes
@@ -79,7 +79,7 @@
                 "</a>")}))
 
 (def host-handlers (reduce into
-                           {:default (routes dynamic-routes resource-routes spa-route)}
+                           {:default (routes dynamic-routes resource-routes)}
                            [(for [host config/redirect-hosts]
                               [host redirect-routes])
                             (for [[host route] [[config/static-host resource-routes]

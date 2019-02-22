@@ -66,7 +66,7 @@
      :source-paths ["src/cljs"]
      :figwheel     {:on-jsload "clj4tw.core/mount-root"
                     :open-urls ["http://localhost:3449/cljs.html"]}
-     :compiler     {:main                 foreclojure.core/app
+     :compiler     {:main                 clj4tw.core
                     :output-to            "resources/public/js/compiled/app.js"
                     :output-dir           "resources/public/js/compiled/out"
                       :asset-path           "js/compiled/out"

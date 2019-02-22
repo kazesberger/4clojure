@@ -8,6 +8,6 @@ document.write('<script>goog.require("devtools.preload");</script>');
 document.write('<script>goog.require("day8.re_frame_10x.preload");</script>');
 document.write('<script>goog.require("figwheel.connect");</script>');
 document.write('<script>goog.require("process.env");</script>');
-document.write('<script>goog.require("foreclojure.core.app");</script>');
+document.write('<script>goog.require("clj4tw.core");</script>');
 
 document.write("<script>figwheel.connect.start();</script>");
