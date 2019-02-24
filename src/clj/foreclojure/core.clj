@@ -58,7 +58,7 @@
               golf-routes
               settings-routes)
       ((if (:wrap-reload config)
-         #(wrap-reload % '(foreclojure.core))
+         wrap-reload
          identity))
       session/wrap-noir-flash
       (session/wrap-noir-session {:store (mongo-session :sessions)})
