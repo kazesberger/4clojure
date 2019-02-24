@@ -34,7 +34,7 @@
 (def ^:dynamic *block-server* false)
 
 ;(defroutes spa-route
-;  (GET "/re-frame" [] (resource-response "cljs.html" {:root "public"})))
+;  (GET "/re-frame" [] (resource-response "index.html" {:root "public"})))
 
 
 (defroutes resource-routes

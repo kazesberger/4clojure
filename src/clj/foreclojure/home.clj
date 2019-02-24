@@ -36,4 +36,4 @@
      " is itself open source.  Once you've mastered the language, feel free to contribute something back to the community."]]})
 
 (defroutes home-routes
-  (GET "/" [] (welcome-page)))
+  (GET "/home" [] (welcome-page)))
