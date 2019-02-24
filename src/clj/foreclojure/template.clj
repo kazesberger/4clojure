@@ -38,7 +38,8 @@
        [:div#content
         [:div#menu
          (for [[link text & [tabbed]]
-               [["/home" "Main Page"]
+               [["/" "cljs UI"]
+                ["/home" "Main Page"]
                 ["/problems" "Problem List"]
                 ["/users" "Top Users"]
                 ["/directions" "Help"]

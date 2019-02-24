@@ -33,11 +33,17 @@
    :label "go to About Page"
    :href "#/about"])
 
+(defn link-to-old-ui []
+  [re-com/hyperlink-href
+   :label "go to Old UI"
+   :href "/home"])
+
 (defn home-panel []
   [re-com/v-box
    :gap "1em"
    :children [[home-title]
               [link-to-about-page]
+              [link-to-old-ui]
               [display-re-pressed-example]]])
 
 
