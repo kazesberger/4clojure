@@ -200,6 +200,7 @@ specified id.
 Return a map, {:message, :error, :url, :num-tests-passed}."
   [id code]
   (try
+    (i/instrument)
     (let [{:keys [tests restricted] :as problem} (get-problem id)
           sb-tester (get-tester restricted)
           user-forms (s/join " " (map pr-str (read-string-safely code)))
@@ -223,7 +224,9 @@ Return a map, {:message, :error, :url, :num-tests-passed}."
                (mark-completed problem code))
         :num-tests-passed (count passed)))
     (catch Throwable t {:message "" :error (.getMessage t), :url *url*
-                        :num-tests-passed 0})))
+                        :num-tests-passed 0})
+    (finally
+      (i/uninstrument))))
 
 (defn static-run-code [id code]
   (session/flash-put! :code code)
@@ -575,7 +578,7 @@ Return a map, {:message, :error, :url, :num-tests-passed}."
                      :tests (s/join "\r\n\r\n" tests)}]
         (session/flash-put! k v))
       (response/redirect "/problems/submit"))
-  (flash-error "/problems" "You don't have access to this page")))
+    (flash-error "/problems" "You don't have access to this page")))
 
 (defn approve-problem [id]
   "take a user submitted problem and approve it"

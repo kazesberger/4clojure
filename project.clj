@@ -5,7 +5,7 @@
                  [reagent "0.7.0"]
                  [re-frame "0.10.5"]
                  [com.andrewmcveigh/cljs-time "0.5.2"]
-                 [org.clojure/core.async "0.2.391"]
+                 [org.clojure/core.async "0.4.490"]
                  [re-com "2.1.0"]
                  [secretary "1.2.3"]
                  [yogthos/config "0.8"]
@@ -28,7 +28,8 @@
                  [clj-time "0.15.0"]
                  [commons-lang "2.6"]
                  [org.apache.commons/commons-email "1.2"]
-                 [org.clojure/data.xml "0.2.0-alpha6"]]
+                 [org.clojure/data.xml "0.2.0-alpha6"]
+                 [speculative "0.0.3"]]
 
 
   :plugins [[lein-ring "0.12.5"]

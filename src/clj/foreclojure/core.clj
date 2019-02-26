@@ -1,7 +1,8 @@
 (ns foreclojure.core
   (:require [compojure.handler          :as   handler]
             [foreclojure.config         :as   config]
-            [noir.session               :as   session])
+            [noir.session               :as   session]
+            [speculative.instrument     :as   i])
   (:import  [java.lang                  OutOfMemoryError])
   (:use     [compojure.core             :only [defroutes routes GET]]
             [foreclojure.static         :only [static-routes]]
@@ -32,9 +33,6 @@
   (:gen-class))
 
 (def ^:dynamic *block-server* false)
-
-;(defroutes spa-route
-;  (GET "/re-frame" [] (resource-response "index.html" {:root "public"})))
 
 
 (defroutes resource-routes
