@@ -4,6 +4,9 @@
             [clojure.string           :as      s]
             [ring.util.response       :as      response]
             [cheshire.core            :as      json]
+            [speculative.instrument   :as      i]
+            [clojure.spec.alpha         :as   spec]
+            [expound.alpha              :as   expound]
             [clojure.data.xml         :refer   [element]])
   (:import  [org.apache.commons.mail  EmailException])
   (:use     [foreclojure.utils        :only    [from-mongo get-user get-solved login-link flash-msg flash-error row-class approver? can-submit? send-email image-builder if-user with-user as-int maybe-update escape-html]]
@@ -200,33 +203,34 @@ specified id.
 Return a map, {:message, :error, :url, :num-tests-passed}."
   [id code]
   (try
-    (i/instrument)
-    (let [{:keys [tests restricted] :as problem} (get-problem id)
-          sb-tester (get-tester restricted)
-          user-forms (s/join " " (map pr-str (read-string-safely code)))
-          devnull (java.io.StringWriter.) ;; TODO consider Apache Commons IO
-          results (if (empty? user-forms)
-                    ["Empty input is not allowed."]
-                    (for [test tests]
-                      (try
-                        (when-not (sb (->> user-forms
-                                           (s/replace test "__")
-                                           read-string-safely
-                                           first)
-                                      sb-tester
-                                      {#'*out* devnull
-                                       #'*err* devnull})
-                          "You failed the unit tests")
-                        (catch Throwable t (.getMessage t)))))
-          [passed [fail-msg]] (split-with nil? results)]
-      (assoc (if fail-msg
-               {:message "", :error fail-msg, :url *url*}
-               (mark-completed problem code))
-        :num-tests-passed (count passed)))
-    (catch Throwable t {:message "" :error (.getMessage t), :url *url*
-                        :num-tests-passed 0})
-    (finally
-      (i/uninstrument))))
+    (binding [spec/*explain-out* expound/printer]
+      (i/instrument)
+      (let [{:keys [tests restricted] :as problem} (get-problem id)
+            sb-tester (get-tester restricted)
+            user-forms (s/join " " (map pr-str (read-string-safely code)))
+            devnull (java.io.StringWriter.) ;; TODO consider Apache Commons IO
+            results (if (empty? user-forms)
+                      ["Empty input is not allowed."]
+                      (for [test tests]
+                        (try
+                          (when-not (sb (->> user-forms
+                                             (s/replace test "__")
+                                             read-string-safely
+                                             first)
+                                        sb-tester
+                                        {#'*out* devnull
+                                         #'*err* devnull})
+                            "You failed the unit tests")
+                          (catch Throwable t (.getMessage t)))))
+            [passed [fail-msg]] (split-with nil? results)]
+        (assoc (if fail-msg
+                 {:message "", :error fail-msg, :url *url*}
+                 (mark-completed problem code))
+          :num-tests-passed (count passed)))
+      (catch Throwable t {:message "" :error (.getMessage t), :url *url*
+                          :num-tests-passed 0}))))
+    ;(finally
+    ;  (i/unstrument))))
 
 (defn static-run-code [id code]
   (session/flash-put! :code code)

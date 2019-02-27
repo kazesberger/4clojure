@@ -29,7 +29,9 @@
                  [commons-lang "2.6"]
                  [org.apache.commons/commons-email "1.2"]
                  [org.clojure/data.xml "0.2.0-alpha6"]
-                 [speculative "0.0.3"]]
+                 [speculative "0.0.3"]
+                 [expound "0.7.2"]
+                 [org.clojure/spec.alpha "0.2.176"]]
 
 
   :plugins [[lein-ring "0.12.5"]

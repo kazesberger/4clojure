@@ -2,7 +2,9 @@
   (:require [compojure.handler          :as   handler]
             [foreclojure.config         :as   config]
             [noir.session               :as   session]
-            [speculative.instrument     :as   i])
+            [speculative.instrument     :as   i]
+            [clojure.spec.alpha         :as   s]
+            [expound.alpha              :as   expound])
   (:import  [java.lang                  OutOfMemoryError])
   (:use     [compojure.core             :only [defroutes routes GET]]
             [foreclojure.static         :only [static-routes]]
@@ -117,6 +119,8 @@
               (binding [*out* *err*]
                 (println "Caught error at " (java.util.Date.))))))
         (run)))))
+
+(set! s/*explain-out* expound/printer)
 
 (defn -main [& args]
   (binding [*block-server* true]
