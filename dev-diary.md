@@ -7,6 +7,18 @@ This file is used
 
 This could be initial spark to provide PRs to other projects (myself) and possibly could be used for yet another "CLJ-begginer-experience-review" blog post.
 
+## dev-setup and speculative (2019-02-27)
+
+* switched back to using lein-ring plugin to get backend error messages
+    * for some reason i get a strange error message <br>![](issues/issue-404-on-unknown-resource.png) haven't looked into that for now. 
+* was able to add speculative instrumentation to problem code evaluation (i was just missing the require-statement it seems... but due to lack of error messages before...)
+* but i failed at setting the explain-printer of spec to expounds printer. for some reason clojure.spec.alpha/*explain-out* isn't visible to my namespace. 
+    * this most certainly has something to do with the dependency mess I got right now. there are multiple sources atm for spec.alpha.
+* must find a proper setup with repl-connections to clj and cljs repls - gonna reach out for help on this one probably
+    * this might even be the time where i 
+        * either fully understand how cursive works and what exactly it is capable of now
+        * or try to learn emacs as i have a feeling that i might run into fewer troubles using a repl-connection with my IDE.
+
 ## speculative (2019-02-26)
 
 * call to fn instrument breaks project - the symptom is that i cannot navigate any ring-routes besides the static ones.
