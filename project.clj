@@ -1,6 +1,6 @@
 (defproject foreclojure "2.0.0-rc2"
   :description "4clojure - a website for learning Clojure"
-  :dependencies [[org.clojure/clojure "1.8.0"]
+  :dependencies [[org.clojure/clojure "1.10.0"]
                  [org.clojure/clojurescript "1.10.238"]
                  [reagent "0.7.0"]
                  [re-frame "0.10.5"]
@@ -30,7 +30,15 @@
                  [org.apache.commons/commons-email "1.2"]
                  [org.clojure/data.xml "0.2.0-alpha6"]]
 
-  ;:plugins [[lein-ring "0.7.1"]]
+
+  :plugins [[lein-ring "0.12.5"]
+            [lein-cljsbuild "1.1.7"]]
+  :main foreclojure.core
+  :ring {:handler foreclojure.core/app
+         :init foreclojure.mongo/prepare-mongo}
+
+
+;:plugins [[lein-ring "0.7.1"]]
   ;:plugins [[lein-cljsbuild "1.1.7"]]
   ;:plugins [[lein-figwheel "0.5.16"]]
 
