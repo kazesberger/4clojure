@@ -7,6 +7,11 @@ This file is used
 
 This could be initial spark to provide PRs to other projects (myself) and possibly could be used for yet another "CLJ-beginner-experience-review" blog post.
 
+## ugly first version of `speculative + expound` feature works
+
+* the missing piece for correctly formatted error message was to just style the span used for the error messages like a pre (monospaced and whitespace)
+* TODO i'll need to revisit the code though, mb i can write some test(s) to make sure i properly (still) handle any error-event correctly.
+
 ## pick up work after a way too long break of clj coding in my spare time
 
 * instrument/unstrument works now properly (dont know exactly what i did wrong the last time though i did bump again some dep-versions.

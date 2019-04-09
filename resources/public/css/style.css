@@ -326,6 +326,11 @@ div.message #error-text {
     color: red;
 }
 
+span#error-message-text {
+    font-family: monospace;
+    white-space: pre;
+}
+
 div#prob-container {
   position: relative;
 }
