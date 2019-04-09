@@ -218,7 +218,7 @@
 ;(get-in debug-t [:data :problems])
 ;(:clojure.spec.alpha/problems (first debug-results))
 
-(ex-p/highlighted-value {:show-valid-values? true} (::spec/problems (first debug-results)))
+;(ex-p/highlighted-value {:show-valid-values? true} (::spec/problems (first debug-results)))
 
 (defn run-code
   "Run the specified code-string against the test cases for the problem with the
@@ -244,7 +244,7 @@ Return a map, {:message, :error, :url, :num-tests-passed}."
                                         sb-tester
                                         {#'*out* devnull
                                          #'*err* devnull})
-                            "You failed the unit tests"
+                            "You failed the unit tests")
                           ;(catch Throwable t  (:data (Throwable->map t)))
                           ; catch specific exception and then check whether data is valid explain data and/or failure is :instrument or somethin.
                                                           ; otherwise return just the message)
