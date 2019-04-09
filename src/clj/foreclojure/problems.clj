@@ -7,6 +7,7 @@
             [speculative.instrument   :as      i]
             [clojure.spec.alpha         :as   spec]
             [expound.alpha              :as   expound]
+            [expound.problems              :as   ex-p]
             [clojure.data.xml         :refer   [element]])
   (:import  [org.apache.commons.mail  EmailException])
   (:use     [foreclojure.utils        :only    [from-mongo get-user get-solved login-link flash-msg flash-error row-class approver? can-submit? send-email image-builder if-user with-user as-int maybe-update escape-html]]
@@ -196,6 +197,29 @@
         (doall (take-while (complement #{end})
                            (repeatedly #(read *in* false end))))))))
 
+;(def check-result-sample
+;  {:clojure.spec.alpha/problems
+;   '({:path [:maps :init-map :clojure.spec.alpha/pred], :pred clojure.core/map?, :val [1 2 3], :via [], :in [0]}
+;     {:path [:maps :init-map :clojure.spec.alpha/nil], :pred nil?, :val [1 2 3], :via [], :in [0]})
+;   :clojure.spec.alpha/spec nil
+;   :clojure.spec.alpha/value '([1 2 3] 4)
+;   :clojure.spec.alpha/fn clojure.core/merge
+;   :clojure.spec.alpha/args '([1 2 3] 4)
+;   :clojure.spec.alpha/failure :instrument
+;   :clojure.spec.test.alpha/caller {:file "NO_SOURCE_FILE", :line 0, :var-scope nil}})
+;
+;(expound/explain-result-str check-result-sample)
+
+;(expound/explain-results (map :data (map Throwable->map debug-t)))
+;
+;(first (first debug-t))
+;(map :data (map Throwable->map debug-t))
+;
+;(get-in debug-t [:data :problems])
+;(:clojure.spec.alpha/problems (first debug-results))
+
+(ex-p/highlighted-value {:show-valid-values? true} (::spec/problems (first debug-results)))
+
 (defn run-code
   "Run the specified code-string against the test cases for the problem with the
 specified id.
@@ -220,17 +244,23 @@ Return a map, {:message, :error, :url, :num-tests-passed}."
                                         sb-tester
                                         {#'*out* devnull
                                          #'*err* devnull})
-                            "You failed the unit tests")
-                          (catch Throwable t (.getMessage t)))))
+                            "You failed the unit tests"
+                          ;(catch Throwable t  (:data (Throwable->map t)))
+                          ; catch specific exception and then check whether data is valid explain data and/or failure is :instrument or somethin.
+                                                          ; otherwise return just the message)
+                            ; the easiest for now would be just a monospaced text-area i think
+                            ; aaaand then i found this: https://github.com/lambdaisland/ansi
+                            ; with cljs it would be nice to build a small terminal text area with a monospaced font.
+                          (catch Throwable t  (:data (Throwable->map t))))))
             [passed [fail-msg]] (split-with nil? results)]
         (assoc (if fail-msg
-                 {:message "", :error fail-msg, :url *url*}
+                 {:message "", :error (do (def debug-results results)(println ">>" fail-msg "<<") (expound/explain-result-str fail-msg)), :url *url*}
                  (mark-completed problem code))
           :num-tests-passed (count passed)))
       (catch Throwable t {:message "" :error (.getMessage t), :url *url*
-                          :num-tests-passed 0}))))
-    ;(finally
-    ;  (i/unstrument))))
+                          :num-tests-passed 0}))
+    (finally
+      (i/unstrument))))
 
 (defn static-run-code [id code]
   (session/flash-put! :code code)

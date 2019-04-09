@@ -38,7 +38,10 @@
             [lein-cljsbuild "1.1.7"]]
   :main foreclojure.core
   :ring {:handler foreclojure.core/app
-         :init foreclojure.mongo/prepare-mongo}
+         :init foreclojure.mongo/prepare-mongo
+         :nrepl {:start? true}}
+
+
 
 
 ;:plugins [[lein-ring "0.7.1"]]
@@ -58,13 +61,13 @@
   :profiles
   {:dev
             {:source-paths ["src/clj" "src/cljs" "src/dev"]
-             :dependencies [#_[midje "1.3.0" :exclusions [org.clojure/clojure]]
+             :dependencies [[midje "1.9.7" :exclusions [org.clojure/clojure]]
                             [binaryage/devtools "0.9.10"]
                             [day8.re-frame/re-frame-10x "0.3.3"]
                             [day8.re-frame/tracing "0.5.1"]
                             [figwheel-sidecar "0.5.16"]
                             [cider/piggieback "0.4.0"]]
-             :repl-options {:nrepl-middleware [cider.piggieback/wrap-cljs-repl]}
+             ;:repl-options {:nrepl-middleware [cider.!!piggieback/wrap-cljs-repl]}
              :plugins      [[lein-figwheel "0.5.16"]]}
 
    :prod    {:dependencies [[day8.re-frame/tracing-stubs "0.5.1"]]}

@@ -5,7 +5,20 @@ This file is used
 * to publish progress on my work on 4clojure 
 * and to have a log of problems i encountered.
 
-This could be initial spark to provide PRs to other projects (myself) and possibly could be used for yet another "CLJ-begginer-experience-review" blog post.
+This could be initial spark to provide PRs to other projects (myself) and possibly could be used for yet another "CLJ-beginner-experience-review" blog post.
+
+## pick up work after a way too long break of clj coding in my spare time
+
+* instrument/unstrument works now properly (dont know exactly what i did wrong the last time though i did bump again some dep-versions.
+* have a cursive remote repl session attached to nrepl server that i configured with ring options
+* this finally makes it quite ez to move forward
+* managed to display an expound-processed spec error message. needs formatting
+* not sure whether to
+    * add hiccup generating function for expound messages (expound pr?)
+    * just provide the data required to build such a ui component outside of expound (i prefer this one)
+    * i probably could just go ahead and print errors in a special text area and/or mb use [ansi](https://github.com/lambdaisland/ansi)
+* fiddled around with expound in repl and looked into source code. i aim to finish a first correctly formatted version this week
+
 
 ## dev-setup and speculative (2019-02-27)
 

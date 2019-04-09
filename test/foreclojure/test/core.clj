@@ -27,9 +27,9 @@
   
 
 
-(deftest db-integrity
+(deftest db-integrity)
   ;Commenting out this breaking test for now
   ;eventually we need to work out a test database for running these
   ;tests against
   ;(is (= (users-solved) (problems-solved)) "DB integrity check - problems solved")
-  )
+

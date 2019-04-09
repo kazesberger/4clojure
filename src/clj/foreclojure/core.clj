@@ -120,7 +120,7 @@
                 (println "Caught error at " (java.util.Date.))))))
         (run)))))
 
-(set! s/*explain-out* expound/printer)
+;(set! s/*explain-out* expound/printer)
 
 (defn -main [& args]
   (binding [*block-server* true]
