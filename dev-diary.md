@@ -7,6 +7,14 @@ This file is used
 
 This could be initial spark to provide PRs to other projects (myself) and possibly could be used for yet another "CLJ-beginner-experience-review" blog post.
 
+## started with cljs ui
+
+* first lines of code for navigation using secretary routing
+
+## finished the first version of `speculative + expound` feature 
+
+* ...by writing proper functions distinguishing between failed tests and spec errors.
+
 ## ugly first version of `speculative + expound` feature works
 
 * the missing piece for correctly formatted error message was to just style the span used for the error messages like a pre (monospaced and whitespace)

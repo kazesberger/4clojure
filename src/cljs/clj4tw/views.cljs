@@ -1,9 +1,12 @@
 (ns clj4tw.views
   (:require
-   [re-frame.core :as re-frame]
-   [re-com.core :as re-com]
-   [re-pressed.core :as rp]
-   [clj4tw.subs :as subs]))
+    [re-frame.core :as re-frame]
+    [re-com.core :as re-com]
+    [re-pressed.core :as rp]
+    [clj4tw.subs :as subs]
+    [clj4tw.events :as events]
+    [clj4tw.routes :as routes]
+    [secretary.core :as secretary]))
 
 
 ;; home
@@ -22,28 +25,28 @@
         :alert-type :info
         :body rpe])]))
 
-(defn home-title []
+(defn header []
   (let [name (re-frame/subscribe [::subs/name])]
     [re-com/title
-     :label (str "Hello from " @name ". This is the Home Page.")
+     :label (str "Hello " @name ". Solve some Problems.")
      :level :level1]))
 
-(defn link-to-about-page []
-  [re-com/hyperlink-href
-   :label "go to About Page"
-   :href "#/about"])
+(defn navigation-tabs []
+  (let [tabs (re-frame/subscribe [::subs/tabs])
+        active-panel (re-frame/subscribe [::subs/active-panel])]
+    [re-com/horizontal-bar-tabs
+       :model @active-panel
+       :tabs @tabs
+       :on-change     (fn [new-panel-id]
+                        (secretary/dispatch! (:route-path (first (filter #(= new-panel-id (:id %)) @tabs)))))]))
 
-(defn link-to-old-ui []
-  [re-com/hyperlink-href
-   :label "go to Old UI"
-   :href "/home"])
 
 (defn home-panel []
   [re-com/v-box
    :gap "1em"
-   :children [[home-title]
-              [link-to-about-page]
-              [link-to-old-ui]
+   :children [[header]
+              [navigation-tabs]
+
               [display-re-pressed-example]]])
 
 
@@ -54,28 +57,24 @@
    :label "This is the About Page."
    :level :level1])
 
-(defn link-to-home-page []
-  [re-com/hyperlink-href
-   :label "go to Home Page"
-   :href "#/"])
-
 (defn about-panel []
   [re-com/v-box
    :gap "1em"
    :children [[about-title]
-              [link-to-home-page]]])
+              [navigation-tabs]]])
 
-
-;; main
+              ;; main
 
 (defn- panels [panel-name]
   (case panel-name
-    :home-panel [home-panel]
-    :about-panel [about-panel]
+    ::routes/home-panel [home-panel]
+    ::routes/about-panel [about-panel]
+    ::routes/problems-panel [about-panel]
+    ::routes/topusers-panel [about-panel]
+    ::routes/help-panel [about-panel]
+    ::routes/repl-panel [about-panel]
+    ::routes/docs-panel [about-panel]
     [:div]))
-
-(defn show-panel [panel-name]
-  [panels panel-name])
 
 (defn main-panel []
   (let [active-panel (re-frame/subscribe [::subs/active-panel])]

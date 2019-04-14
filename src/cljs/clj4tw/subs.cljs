@@ -8,6 +8,11 @@
    (:name db)))
 
 (re-frame/reg-sub
+ ::tabs
+ (fn [db]
+   (:tabs db)))
+
+(re-frame/reg-sub
  ::active-panel
  (fn [db _]
    (:active-panel db)))

@@ -18,12 +18,13 @@
        (secretary/dispatch! (.-token event))))
     (.setEnabled true)))
 
+
 (defn app-routes []
   (secretary/set-config! :prefix "#")
   ;; --------------------
   ;; define routes here
   (defroute "/" []
-    (re-frame/dispatch [::events/set-active-panel :home-panel])
+    (re-frame/dispatch [::events/set-active-panel ::home-panel])
     (re-frame/dispatch [::events/set-re-pressed-example nil])
     (re-frame/dispatch
      [::rp/set-keydown-rules
@@ -41,7 +42,17 @@
 
 
   (defroute "/about" []
-    (re-frame/dispatch [::events/set-active-panel :about-panel]))
+    (re-frame/dispatch [::events/set-active-panel ::about-panel]))
+  (defroute "/problems" []
+    (re-frame/dispatch [::events/set-active-panel ::problems-panel]))
+  (defroute "/topusers" []
+    (re-frame/dispatch [::events/set-active-panel ::topusers-panel]))
+  (defroute "/help" []
+    (re-frame/dispatch [::events/set-active-panel ::help-panel]))
+  (defroute "/repl" []
+    (re-frame/dispatch [::events/set-active-panel ::repl-panel]))
+  (defroute "/docs" []
+    (re-frame/dispatch [::events/set-active-panel ::docs-panel]))
 
 
   ;; --------------------
